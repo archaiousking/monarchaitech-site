@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" />
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:#F8F6F1;color:#111111;}
+.mt-nav{background:#0d1117;padding:0 48px;height:90px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1000;}
+.mt-nav-logo img{height:76px;width:auto;display:block;background:#0d1117;padding:4px;}
+.mt-nav-links{display:flex;gap:32px;align-items:center;}
+.mt-nav-links a{color:#D8D2C8;font-size:13px;text-decoration:none;letter-spacing:0.3px;transition:color 0.2s;}
+.mt-nav-links a:hover{color:#C9A227;}
+.mt-nav-cta{background:#C9A227;color:#111111 !important;font-size:12px;font-weight:700;padding:10px 20px;border-radius:3px;letter-spacing:0.5px;white-space:nowrap;}
+.mt-nav-cta:hover{background:#b8911f !important;}
+.mt-nav-dropdown{position:relative;}
+.mt-nav-dropdown > a{display:flex;align-items:center;gap:5px;cursor:pointer;}
+.mt-nav-dropdown > a::after{content:'▾';font-size:10px;color:#D8D2C8;}
+.mt-dropdown-menu{display:none;position:absolute;top:calc(100% + 12px);left:0;background:#0d1117;border:1px solid #1e2a3a;border-radius:6px;min-width:220px;overflow:hidden;z-index:2000;}
+.mt-dropdown-menu.open{display:block;}
+.mt-dropdown-menu a{display:flex;align-items:center;gap:10px;color:#D8D2C8;font-size:13px;padding:12px 16px;text-decoration:none;border-bottom:1px solid #1e2a3a;transition:background 0.2s,color 0.2s;}
+.mt-dropdown-menu a:last-child{border-bottom:none;}
+.mt-dropdown-menu a:hover{background:#1e2a3a;color:#C9A227;}
+.mt-dropdown-badge{font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:0.5px;}
+.mt-dropdown-badge.echo{background:#00b4d8;color:#0d1117;}
+.mt-dropdown-badge.grain{background:#C9A227;color:#111111;}
+.mt-dropdown-badge.arc{background:#FF2D78;color:#ffffff;}
+.mt-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+.mt-hamburger span{display:block;width:24px;height:2px;background:#D8D2C8;border-radius:2px;transition:all 0.3s;}
+.mt-mobile-menu{display:none;flex-direction:column;background:#0d1117;padding:20px 24px;border-top:1px solid #1e2a3a;}
+.mt-mobile-menu a{color:#D8D2C8;text-decoration:none;font-size:15px;padding:12px 0;border-bottom:1px solid #1e2a3a;display:block;}
+.mt-mobile-menu a:hover{color:#C9A227;}
+.mt-mobile-menu .mt-nav-cta{background:#C9A227;color:#111111 !important;font-weight:700;padding:12px 20px;border-radius:3px;text-align:center;margin-top:12px;border-bottom:none;}
+.mt-mobile-menu.open{display:flex;}
+.mt-mobile-submenu-label{color:#C9A227;font-size:10px;font-weight:700;letter-spacing:2px;padding:12px 0 4px;border-bottom:none !important;cursor:default;}
+@media(max-width:768px){
+.mt-nav{padding:0 20px;}
+.mt-nav-links{display:none;}
+.mt-hamburger{display:flex;}
+}
+</style>
+  <title>CLOISE — Cold Calling Cockpit | Monarch Technologies — Monarch Technologies</title>
+</head>
+<body>
+
+<nav class="mt-nav">
+  <div class="mt-nav-logo">
+    <a href="/"><img src="/logo.png" alt="Monarch Technologies" /></a>
+  </div>
+  <div class="mt-nav-links">
+    <a href="/">Home</a>
+    <a href="/about">About Us</a>
+    <div class="mt-nav-dropdown" id="productsDropdown">
+      <a href="#" onclick="toggleDropdown(event)">Products</a>
+      <div class="mt-dropdown-menu" id="productsMenu">
+        <a href="/echo"><span class="mt-dropdown-badge echo">ECHO</span> Business Intelligence</a>
+        <a href="/grain"><span class="mt-dropdown-badge grain">GRAIN</span> Document Signing</a>
+        <a href="/arc"><span class="mt-dropdown-badge arc">ARC</span> Email Campaigns</a>
+        <a href="/cloise"><span class="mt-dropdown-badge" style="background:#E63946;color:#fff;">CLOISE</span> Cold Calling Cockpit</a>
+      </div>
+    </div>
+    <a href="/blog">Blog</a>
+    <a href="/contact">Contact Us</a>
+    <a href="https://echo.monarchaitech.com" class="mt-nav-cta">Try Echo Free</a>
+  </div>
+  <div class="mt-hamburger" id="mtHamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mt-mobile-menu" id="mtMobileMenu">
+  <a href="/">Home</a>
+  <a href="/about">About Us</a>
+  <span class="mt-mobile-submenu-label">PRODUCTS</span>
+  <a href="/echo" style="padding-left:12px;">↳ Echo — Business Intelligence</a>
+  <a href="/grain" style="padding-left:12px;">↳ GRAIN — Document Signing</a>
+  <a href="/arc" style="padding-left:12px;">↳ ARC — Email Campaigns</a>
+  <a href="/cloise" style="padding-left:12px;">↳ CLOISE — Cold Calling Cockpit</a>
+  <a href="/blog">Blog</a>
+  <a href="/contact">Contact Us</a>
+  <a href="https://echo.monarchaitech.com" class="mt-nav-cta">Try Echo Free</a>
+</div>
+
+<script>
+document.getElementById('mtHamburger').addEventListener('click', function() {
+  document.getElementById('mtMobileMenu').classList.toggle('open');
+});
+function toggleDropdown(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  document.getElementById('productsMenu').classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  var dropdown = document.getElementById('productsDropdown');
+  if (dropdown && !dropdown.contains(e.target)) {
+    document.getElementById('productsMenu').classList.remove('open');
+  }
+});
+</script>
+
+<style>
+.cl-hero{background:#0d1117;padding:80px 48px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.cl-hero-badge{display:inline-block;background:#1a1a1a;border:1px solid #E63946;color:#E63946;font-size:10px;font-weight:700;padding:5px 12px;border-radius:3px;letter-spacing:2px;margin-bottom:20px;}
+.cl-hero-eyebrow{color:#C9A227;font-size:10px;font-weight:700;letter-spacing:3px;margin-bottom:18px;}
+.cl-hero-headline{font-size:40px;font-weight:700;color:#F8F6F1;line-height:1.15;margin-bottom:14px;}
+.cl-hero-headline span{color:#E63946;}
+.cl-hero-sub{font-size:15px;color:#D8D2C8;line-height:1.75;margin-bottom:32px;max-width:480px;}
+.cl-hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.cl-btn-primary{background:#E63946;color:#fff;font-size:13px;font-weight:700;padding:13px 24px;border-radius:3px;text-decoration:none;letter-spacing:0.5px;display:inline-block;transition:background 0.2s;}
+.cl-btn-primary:hover{background:#c9303d;}
+.cl-btn-secondary{background:transparent;color:#F8F6F1;font-size:13px;font-weight:600;padding:13px 24px;border-radius:3px;text-decoration:none;letter-spacing:0.5px;border:1.5px solid #D8D2C8;display:inline-block;}
+.cl-btn-secondary:hover{background:#F8F6F1;color:#111111;}
+.cl-mockup{background:#111827;border-radius:12px;padding:24px;border:1px solid #1e2a3a;}
+.cl-mockup-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid #1e2a3a;}
+.cl-mockup-logo{color:#F8F6F1;font-size:16px;font-weight:800;letter-spacing:2px;}
+.cl-mockup-plan{background:#1a1a1a;border:1px solid #E63946;color:#E63946;font-size:9px;font-weight:700;padding:3px 8px;border-radius:3px;letter-spacing:1px;}
+.cl-lead-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #1e2a3a;}
+.cl-lead-row:last-of-type{border-bottom:none;}
+.cl-lead-name{color:#F8F6F1;font-size:12px;font-weight:700;flex:1;}
+.cl-lead-company{color:#C9A227;font-size:11px;flex:1;}
+.cl-lead-disp{font-size:9px;font-weight:700;padding:3px 8px;border-radius:3px;white-space:nowrap;}
+.cl-disp-warm{background:#1a3a2a;color:#00c97a;border:1px solid #00c97a;}
+.cl-disp-cb{background:#2a2a00;color:#C9A227;border:1px solid #C9A227;}
+.cl-disp-vm{background:#1a2332;color:#7a9bb5;border:1px solid #2a3a4a;}
+.cl-disp-ni{background:#2a1a1a;color:#E63946;border:1px solid #E63946;}
+.cl-cockpit-strip{background:#0d1117;border:1px solid #1e2a3a;border-radius:8px;padding:12px 16px;margin-top:12px;}
+.cl-cockpit-label{font-size:9px;font-weight:700;color:#E63946;letter-spacing:1.5px;margin-bottom:8px;}
+.cl-obj-btns{display:flex;flex-wrap:wrap;gap:6px;}
+.cl-obj-btn{background:#1a2332;border:1px solid #2a3a4a;color:#D8D2C8;font-size:10px;padding:5px 10px;border-radius:4px;}
+.cl-obj-btn.active{border-color:#E63946;color:#E63946;background:#2a1a1a;}
+.cl-accent-band{background:#E63946;padding:28px 48px;text-align:center;}
+.cl-accent-band p{font-size:14px;font-weight:700;color:#fff;letter-spacing:0.5px;}
+.cl-accent-band span{font-size:11px;font-weight:400;color:rgba(255,255,255,0.75);margin-left:8px;}
+.cl-features{background:#F8F6F1;padding:80px 48px;}
+.cl-section-eyebrow{color:#E63946;font-size:10px;font-weight:700;letter-spacing:3px;text-align:center;margin-bottom:12px;}
+.cl-section-heading{font-size:28px;font-weight:700;color:#111111;text-align:center;line-height:1.3;margin-bottom:48px;}
+.cl-feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.cl-feature-card{background:white;border:0.5px solid #D8D2C8;border-radius:10px;padding:28px 24px;}
+.cl-feature-icon{width:48px;height:48px;border:1.5px solid #E63946;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+.cl-feature-icon i{font-size:20px;color:#E63946;}
+.cl-feature-title{font-size:15px;font-weight:700;color:#111111;margin-bottom:10px;}
+.cl-feature-desc{font-size:13px;color:#555;line-height:1.75;}
+.cl-how{background:#111111;padding:80px 48px;}
+.cl-how-heading{font-size:28px;font-weight:700;color:#F8F6F1;text-align:center;margin-bottom:12px;}
+.cl-how-sub{font-size:14px;color:#D8D2C8;text-align:center;margin-bottom:48px;}
+.cl-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.cl-step{text-align:center;}
+.cl-step-num{width:40px;height:40px;border-radius:50%;background:#E63946;color:#fff;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+.cl-step-icon{font-size:24px;color:#E63946;margin-bottom:12px;}
+.cl-step-title{font-size:14px;font-weight:700;color:#F8F6F1;margin-bottom:8px;}
+.cl-step-desc{font-size:12px;color:#D8D2C8;line-height:1.7;}
+.cl-cockpit-section{background:#0d1117;padding:80px 48px;}
+.cl-cockpit-section-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1100px;margin:0 auto;}
+.cl-cockpit-demo{background:#111827;border-radius:12px;border:1px solid #1e2a3a;overflow:hidden;}
+.cl-cockpit-demo-topbar{background:#0d1117;border-bottom:1px solid #1e2a3a;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.cl-cockpit-lead-name{color:#F8F6F1;font-size:14px;font-weight:700;}
+.cl-cockpit-lead-co{color:#C9A227;font-size:13px;}
+.cl-cockpit-phone{background:rgba(0,201,122,0.1);border:1px solid rgba(0,201,122,0.3);color:#00c97a;font-size:11px;font-weight:600;padding:4px 10px;border-radius:6px;}
+.cl-cockpit-demo-body{display:grid;grid-template-columns:1fr 280px;min-height:240px;}
+.cl-script-panel{padding:20px;border-right:1px solid #1e2a3a;}
+.cl-script-label{font-size:9px;font-weight:700;color:#7a9bb5;letter-spacing:1.5px;margin-bottom:10px;}
+.cl-script-text{font-size:11px;color:#D8D2C8;line-height:1.8;font-family:monospace;}
+.cl-matrix-panel{padding:16px;background:#0d1117;}
+.cl-matrix-label{font-size:9px;font-weight:700;color:#E63946;letter-spacing:1.5px;margin-bottom:10px;}
+.cl-matrix-btn{display:block;background:#111827;border:1px solid #1e2a3a;color:#D8D2C8;font-size:11px;padding:8px 12px;border-radius:6px;margin-bottom:6px;}
+.cl-matrix-btn.active{border-color:#E63946;color:#E63946;background:#2a1a1a;}
+.cl-cockpit-bottombar{background:#0d1117;border-top:1px solid #1e2a3a;padding:10px 16px;display:flex;gap:8px;flex-wrap:wrap;}
+.cl-disp-pill{font-size:10px;font-weight:600;padding:4px 10px;border-radius:4px;border:1px solid #2a3a4a;color:#7a9bb5;}
+.cl-disp-pill.green{border-color:#00c97a;color:#00c97a;}
+.cl-disp-pill.gold{border-color:#C9A227;color:#C9A227;}
+.cl-disp-pill.red{border-color:#E63946;color:#E63946;}
+.cl-cockpit-copy h3{font-size:24px;font-weight:700;color:#F8F6F1;margin-bottom:16px;line-height:1.3;}
+.cl-cockpit-copy h3 span{color:#E63946;}
+.cl-cockpit-copy p{font-size:13px;color:#D8D2C8;line-height:1.8;margin-bottom:20px;}
+.cl-cockpit-copy ul{list-style:none;}
+.cl-cockpit-copy ul li{font-size:13px;color:#D8D2C8;padding:6px 0;display:flex;gap:10px;border-bottom:0.5px solid #1e2a3a;}
+.cl-cockpit-copy ul li:last-child{border-bottom:none;}
+.cl-cockpit-copy ul li::before{content:"→";color:#E63946;font-weight:700;flex-shrink:0;}
+.cl-objection{background:#F8F6F1;padding:80px 48px;}
+.cl-objection-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px;}
+.cl-objection-card{background:#111111;border-radius:10px;padding:32px;}
+.cl-objection-eyebrow{color:#E63946;font-size:9px;font-weight:700;letter-spacing:2px;margin-bottom:12px;}
+.cl-objection-title{font-size:20px;font-weight:700;color:#F8F6F1;margin-bottom:12px;}
+.cl-objection-desc{font-size:13px;color:#D8D2C8;line-height:1.75;margin-bottom:20px;}
+.cl-objection-list{list-style:none;}
+.cl-objection-list li{font-size:12px;color:#D8D2C8;padding:6px 0;border-bottom:0.5px solid #1e2a3a;display:flex;gap:10px;align-items:flex-start;}
+.cl-objection-list li:last-child{border-bottom:none;}
+.cl-objection-list li::before{content:"→";color:#E63946;font-weight:700;flex-shrink:0;}
+.cl-insights{background:#0d1117;padding:80px 48px;}
+.cl-insights-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1100px;margin:0 auto;}
+.cl-insights-copy h3{font-size:24px;font-weight:700;color:#F8F6F1;margin-bottom:16px;line-height:1.3;}
+.cl-insights-copy h3 span{color:#C9A227;}
+.cl-insights-copy p{font-size:13px;color:#D8D2C8;line-height:1.8;margin-bottom:20px;}
+.cl-insights-copy ul{list-style:none;}
+.cl-insights-copy ul li{font-size:13px;color:#D8D2C8;padding:6px 0;display:flex;gap:10px;border-bottom:0.5px solid #1e2a3a;}
+.cl-insights-copy ul li:last-child{border-bottom:none;}
+.cl-insights-copy ul li::before{content:"✓";color:#C9A227;font-weight:700;flex-shrink:0;}
+.cl-insights-demo{background:#111827;border-radius:12px;padding:24px;border:1px solid #1e2a3a;}
+.cl-insights-title{font-size:11px;font-weight:700;color:#7a9bb5;letter-spacing:1.5px;margin-bottom:16px;}
+.cl-bar-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.cl-bar-label{font-size:11px;color:#D8D2C8;width:110px;flex-shrink:0;}
+.cl-bar-track{flex:1;height:6px;background:#1e2a3a;border-radius:3px;overflow:hidden;}
+.cl-bar-fill{height:100%;border-radius:3px;}
+.cl-bar-val{font-size:11px;color:#7a9bb5;width:60px;text-align:right;flex-shrink:0;}
+.cl-stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px;}
+.cl-stat{background:#0d1117;border-radius:8px;padding:12px;text-align:center;}
+.cl-stat-val{font-size:20px;font-weight:800;color:#C9A227;}
+.cl-stat-label{font-size:10px;color:#7a9bb5;margin-top:4px;}
+.cl-pricing{background:#111111;padding:80px 48px 0;}
+.cl-pricing-heading{font-size:28px;font-weight:700;color:#F8F6F1;text-align:center;margin-bottom:8px;}
+.cl-pricing-sub{font-size:14px;color:#D8D2C8;text-align:center;margin-bottom:48px;}
+.cl-pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto;}
+.cl-price-card{background:#0d1117;border:1px solid #1e2a3a;border-radius:10px;padding:28px 24px;position:relative;}
+.cl-price-card.featured{border-color:#E63946;}
+.cl-price-featured-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#E63946;color:#fff;font-size:9px;font-weight:700;padding:4px 12px;border-radius:3px;letter-spacing:1px;white-space:nowrap;}
+.cl-price-plan{font-size:10px;font-weight:700;color:#7a9bb5;letter-spacing:2px;margin-bottom:12px;}
+.cl-price-amount{font-size:32px;font-weight:800;color:#F8F6F1;margin-bottom:4px;}
+.cl-price-amount span{font-size:14px;font-weight:400;color:#7a9bb5;}
+.cl-price-seats{font-size:12px;color:#C9A227;font-weight:600;margin-bottom:4px;}
+.cl-price-gen{font-size:11px;color:#7a9bb5;margin-bottom:20px;}
+.cl-price-divider{border:none;border-top:0.5px solid #1e2a3a;margin:16px 0;}
+.cl-price-features{list-style:none;}
+.cl-price-features li{font-size:12px;color:#D8D2C8;padding:5px 0;display:flex;gap:8px;align-items:flex-start;}
+.cl-price-features li::before{content:"✓";color:#E63946;font-weight:700;flex-shrink:0;}
+.cl-price-btn{display:block;text-align:center;margin-top:24px;background:#E63946;color:#fff;font-size:13px;font-weight:700;padding:11px 0;border-radius:3px;text-decoration:none;letter-spacing:0.5px;}
+.cl-price-btn.outline{background:transparent;border:1px solid #2a3a4a;color:#D8D2C8;}
+.cl-price-btn.outline:hover{border-color:#E63946;color:#E63946;}
+.cl-addon-bar{max-width:900px;margin:20px auto 0;background:#0d1117;border:1px solid #2a3a4a;border-radius:10px;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.cl-comparison{background:#D8D2C8;padding:80px 48px;}
+.cl-comparison-inner{max-width:900px;margin:0 auto;}
+.cl-table{width:100%;border-collapse:collapse;background:white;border-radius:10px;overflow:hidden;border:0.5px solid #D8D2C8;margin-top:40px;}
+.cl-table th{padding:16px 20px;font-size:12px;font-weight:700;letter-spacing:1px;text-align:center;}
+.cl-table th:first-child{text-align:left;background:#F8F6F1;color:#111111;}
+.cl-table th.cl-col{background:#111111;color:#E63946;}
+.cl-table th.other-col{background:#F8F6F1;color:#888;}
+.cl-table td{padding:14px 20px;font-size:13px;border-bottom:0.5px solid #F0EDE8;text-align:center;}
+.cl-table td:first-child{text-align:left;font-weight:600;color:#111111;background:#FAFAF8;}
+.cl-table td.cl-col{background:#fff8f8;font-weight:700;}
+.cl-table tr:last-child td{border-bottom:none;}
+.check-yes{color:#E63946;font-size:16px;font-weight:700;}
+.check-no{color:#ccc;font-size:16px;}
+.cl-cta{background:#0d1117;padding:72px 48px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;}
+.cl-cta-heading{font-size:28px;font-weight:700;color:#F8F6F1;margin-bottom:12px;}
+.cl-cta-heading span{color:#E63946;}
+.cl-cta-body{font-size:14px;color:#D8D2C8;line-height:1.7;max-width:520px;}
+.cl-cta-btns{display:flex;flex-direction:column;gap:12px;min-width:190px;}
+.cl-btn-cta-primary{background:#E63946;color:#fff;font-size:13px;font-weight:700;padding:13px 24px;border-radius:3px;text-decoration:none;letter-spacing:0.5px;text-align:center;display:block;}
+.cl-btn-cta-outline{background:transparent;color:#F8F6F1;font-size:13px;font-weight:600;padding:12px 24px;border-radius:3px;text-decoration:none;letter-spacing:0.5px;border:1px solid #D8D2C8;text-align:center;display:block;}
+@media(max-width:768px){
+.cl-hero{grid-template-columns:1fr;padding:48px 20px;gap:32px;}
+.cl-mockup{display:none;}
+.cl-hero-headline{font-size:28px;}
+.cl-accent-band{padding:20px;}
+.cl-features{padding:48px 20px;}
+.cl-feature-grid{grid-template-columns:1fr;gap:16px;}
+.cl-how{padding:48px 20px;}
+.cl-steps{grid-template-columns:1fr 1fr;gap:20px;}
+.cl-cockpit-section{padding:48px 20px;}
+.cl-cockpit-section-inner{grid-template-columns:1fr;gap:32px;}
+.cl-cockpit-demo-body{grid-template-columns:1fr;}
+.cl-matrix-panel{display:none;}
+.cl-objection{padding:48px 20px;}
+.cl-objection-grid{grid-template-columns:1fr;gap:20px;}
+.cl-insights{padding:48px 20px;}
+.cl-insights-inner{grid-template-columns:1fr;gap:32px;}
+.cl-pricing{padding:48px 20px;}
+.cl-pricing-grid{grid-template-columns:1fr;gap:16px;}
+.cl-comparison{padding:48px 20px;}
+.cl-table{display:block;overflow-x:auto;}
+.cl-cta{grid-template-columns:1fr;padding:48px 20px;gap:24px;}
+.cl-cta-btns{flex-direction:row;flex-wrap:wrap;}
+}
+@media(max-width:480px){.cl-steps{grid-template-columns:1fr;}.cl-stat-row{grid-template-columns:1fr 1fr;}}
+</style>
+
+<section class="cl-hero">
+  <div>
+    <div class="cl-hero-badge">LIVE COLD CALLING COCKPIT</div>
+    <p class="cl-hero-eyebrow">CLOISE · MONARCH AI TECHNOLOGIES</p>
+    <h1 class="cl-hero-headline">Your Script. Your Leads.<br><span>Your Cockpit. Close.</span></h1>
+    <p class="cl-hero-sub">CLOISE puts your AI-generated cold call script, a 10-rebuttal objection matrix, and your full lead list on one screen while you call. No switching tabs. No winging it. Just work through leads and close deals.</p>
+    <div class="cl-hero-btns">
+      <a href="https://cloise.monarchaitech.com" class="cl-btn-primary">Sign In to CLOISE</a>
+      <a href="#how-it-works" class="cl-btn-secondary">See How It Works</a>
+    </div>
+  </div>
+  <div class="cl-mockup">
+    <div class="cl-mockup-header">
+      <div class="cl-mockup-logo">CLOISE</div>
+      <div class="cl-mockup-plan">BUSINESS</div>
+    </div>
+    <div class="cl-lead-row"><div class="cl-lead-name">Larry Ker</div><div class="cl-lead-company">SDA Building Services Inc.</div><div class="cl-lead-disp cl-disp-warm">INTERESTED</div></div>
+    <div class="cl-lead-row"><div class="cl-lead-name">Maria Santos</div><div class="cl-lead-company">GreenEdge Landscaping</div><div class="cl-lead-disp cl-disp-cb">CALLBACK</div></div>
+    <div class="cl-lead-row"><div class="cl-lead-name">Tom Reeves</div><div class="cl-lead-company">Reeves Pest Control</div><div class="cl-lead-disp cl-disp-vm">VOICEMAIL</div></div>
+    <div class="cl-lead-row"><div class="cl-lead-name">Priya Nair</div><div class="cl-lead-company">Nair HVAC Solutions</div><div class="cl-lead-disp cl-disp-ni">NOT INTERESTED</div></div>
+    <div class="cl-cockpit-strip">
+      <div class="cl-cockpit-label">⚡ OBJECTION MATRIX</div>
+      <div class="cl-obj-btns">
+        <span class="cl-obj-btn active">Too Expensive</span>
+        <span class="cl-obj-btn">Not Interested</span>
+        <span class="cl-obj-btn">Already Have One</span>
+        <span class="cl-obj-btn">Think About It</span>
+        <span class="cl-obj-btn">Call Me Later</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cl-accent-band">
+  <p>Built for the people who actually pick up the phone. <span>Cleaning · Landscaping · HVAC · Pest Control · Property Management · Security</span></p>
+</div>
+
+<section class="cl-features">
+  <p class="cl-section-eyebrow">WHAT YOU GET</p>
+  <h2 class="cl-section-heading">Every Tool You Need to Cold Call Professionally.<br>Nothing You Don't.</h2>
+  <div class="cl-feature-grid">
+    <div class="cl-feature-card"><div class="cl-feature-icon"><i class="ti ti-brain"></i></div><div class="cl-feature-title">AI Script Generation</div><div class="cl-feature-desc">Describe your product, your target market, and your goal. CLOISE generates a complete master script — Opener, 6 Discovery questions, Pivot, and Close — in under 60 seconds. Available in English, French, Spanish, and Portuguese.</div></div>
+    <div class="cl-feature-card"><div class="cl-feature-icon"><i class="ti ti-shield-bolt"></i></div><div class="cl-feature-title">10-Rebuttal Objection Matrix</div><div class="cl-feature-desc">Every AI script comes with 10 custom rebuttals. Each rebuttal has 3 full loops — a clarifying question, a counter, a bridge back into the script, benefits, and a soft close. You never run out of road on a call.</div></div>
+    <div class="cl-feature-card"><div class="cl-feature-icon"><i class="ti ti-phone-call"></i></div><div class="cl-feature-title">Live Call Cockpit</div><div class="cl-feature-desc">Your full script is on the left. Your objection matrix is on the right. Lead name, company, city, and phone number are at the top. Everything you need to make the call is on one screen — no tabs, no notes, no scrambling.</div></div>
+    <div class="cl-feature-card"><div class="cl-feature-icon"><i class="ti ti-list-details"></i></div><div class="cl-feature-title">Session-Based Lead Management</div><div class="cl-feature-desc">Upload your CSV, map your columns once, and name your session. CLOISE works through your list one lead at a time — marking each one Interested, Callback, Voicemail, Closed, DNC, or Not Interested. Resume any session any time.</div></div>
+    <div class="cl-feature-card"><div class="cl-feature-icon"><i class="ti ti-calendar-clock"></i></div><div class="cl-feature-title">Callback Scheduling</div><div class="cl-feature-desc">Mark a lead for callback with a date and time. CLOISE surfaces due callbacks at the top of your queue automatically when it's time. Add call notes so you never go into a callback cold.</div></div>
+    <div class="cl-feature-card"><div class="cl-feature-icon"><i class="ti ti-device-floppy"></i></div><div class="cl-feature-title">Objection Library</div><div class="cl-feature-desc">When a rebuttal works, save it. Your Objection Library builds over time — a searchable, tagged collection of responses that actually closed deals. Accessible from the call screen and your Vault.</div></div>
+  </div>
+</section>
+
+<section class="cl-how" id="how-it-works">
+  <h2 class="cl-how-heading">Up and Calling in Four Steps</h2>
+  <p class="cl-how-sub">From zero to live cockpit in under five minutes.</p>
+  <div class="cl-steps">
+    <div class="cl-step"><div class="cl-step-num">1</div><div class="cl-step-icon"><i class="ti ti-brain"></i></div><div class="cl-step-title">Generate Your Script</div><div class="cl-step-desc">Enter your product, industry, target market, and objective. CLOISE builds your full master script and 10 rebuttals with 3 loops each. Saved to your Vault instantly.</div></div>
+    <div class="cl-step"><div class="cl-step-num">2</div><div class="cl-step-icon"><i class="ti ti-file-upload"></i></div><div class="cl-step-title">Upload Your Lead List</div><div class="cl-step-desc">Upload your CSV and map your columns — contact name, company, phone, city, industry. Name your session and CLOISE loads every lead in order, ready to call.</div></div>
+    <div class="cl-step"><div class="cl-step-num">3</div><div class="cl-step-icon"><i class="ti ti-phone-call"></i></div><div class="cl-step-title">Call from the Cockpit</div><div class="cl-step-desc">Your script fills in merge tags automatically — the lead's name and company appear in your script as you read it. Hit an objection — click it. CLOISE walks you through three loops to close.</div></div>
+    <div class="cl-step"><div class="cl-step-num">4</div><div class="cl-step-icon"><i class="ti ti-circle-check"></i></div><div class="cl-step-title">Mark and Move</div><div class="cl-step-desc">One click to mark the disposition. Add a note. Save and move to the next lead. Your session progress saves automatically — pick up exactly where you left off any time.</div></div>
+  </div>
+</section>
+
+<section style="background:#F8F6F1;padding:80px 48px;">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+    <div>
+      <p style="color:#E63946;font-size:10px;font-weight:700;letter-spacing:3px;margin-bottom:12px;">YOUR PHONE. YOUR RULES.</p>
+      <h2 style="font-size:28px;font-weight:700;color:#111111;line-height:1.3;margin-bottom:20px;">CLOISE Is the Cockpit.<br>You Bring the Phone.</h2>
+      <p style="font-size:14px;color:#555;line-height:1.8;margin-bottom:24px;">Most dialers charge you per minute, lock you into their system, and take a cut of your calling costs. CLOISE doesn't touch your calls. It sits on your screen while you dial from whatever phone or platform you already use.</p>
+      <p style="font-size:14px;color:#555;line-height:1.8;">Your calls go through your own number, your own carrier, your own relationship. CLOISE just makes sure you know exactly what to say when they pick up.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div style="background:#111111;border-radius:10px;padding:24px;text-align:center;"><div style="font-size:32px;margin-bottom:12px;">📱</div><div style="font-size:13px;font-weight:700;color:#F8F6F1;margin-bottom:6px;">Your Mobile Phone</div><div style="font-size:11px;color:#D8D2C8;line-height:1.6;">Call from your cell. CLOISE runs in your browser alongside your calls.</div></div>
+      <div style="background:#111111;border-radius:10px;padding:24px;text-align:center;"><div style="font-size:32px;margin-bottom:12px;">💻</div><div style="font-size:13px;font-weight:700;color:#F8F6F1;margin-bottom:6px;">Google Meet / Teams</div><div style="font-size:11px;color:#D8D2C8;line-height:1.6;">Use any VOIP platform. CLOISE works beside any calling software.</div></div>
+      <div style="background:#111111;border-radius:10px;padding:24px;text-align:center;"><div style="font-size:32px;margin-bottom:12px;">☎️</div><div style="font-size:13px;font-weight:700;color:#F8F6F1;margin-bottom:6px;">Desk Phone / Landline</div><div style="font-size:11px;color:#D8D2C8;line-height:1.6;">Old school works fine. Pull up CLOISE on your computer and dial from your desk phone.</div></div>
+      <div style="background:#111111;border-radius:10px;padding:24px;text-align:center;"><div style="font-size:32px;margin-bottom:12px;">🔌</div><div style="font-size:13px;font-weight:700;color:#F8F6F1;margin-bottom:6px;">Zoom / Any VOIP</div><div style="font-size:11px;color:#D8D2C8;line-height:1.6;">Any platform that makes calls works. CLOISE doesn't care how you dial.</div></div>
+    </div>
+  </div>
+  <div style="max-width:1100px;margin:40px auto 0;background:#111111;border-radius:10px;padding:24px 32px;display:flex;align-items:center;gap:32px;flex-wrap:wrap;">
+    <div style="flex:1;"><div style="font-size:11px;font-weight:700;color:#E63946;letter-spacing:1.5px;margin-bottom:8px;">NO PER-MINUTE CHARGES. EVER.</div><div style="font-size:14px;color:#F8F6F1;line-height:1.7;">Generic dialers charge $0.01–$0.05 per minute on top of your subscription. If your team makes 10,000 calls a month at 3 minutes each, that's $300–$1,500 in call charges on top of your plan. CLOISE charges none of that. Your calling costs are between you and your phone carrier.</div></div>
+    <div style="text-align:center;flex-shrink:0;"><div style="font-size:36px;font-weight:800;color:#E63946;">$0</div><div style="font-size:11px;color:#7a9bb5;margin-top:4px;">per-minute charges</div></div>
+  </div>
+</section>
+
+<section class="cl-cockpit-section">
+  <div class="cl-cockpit-section-inner">
+    <div class="cl-cockpit-demo">
+      <div class="cl-cockpit-demo-topbar">
+        <div><span class="cl-cockpit-lead-name">Larry Ker</span><span style="color:#7a9bb5;margin:0 8px;">·</span><span class="cl-cockpit-lead-co">SDA Building Services Inc.</span><span style="color:#7a9bb5;margin:0 8px;">·</span><span style="color:#7a9bb5;font-size:12px;">Mississauga</span></div>
+        <div class="cl-cockpit-phone">📞 905-212-7032</div>
+      </div>
+      <div class="cl-cockpit-demo-body">
+        <div class="cl-script-panel">
+          <div class="cl-script-label">OPENER</div>
+          <div class="cl-script-text">'Hey Larry, my name is [REP NAME] — I'll be upfront with you, this is a cold call, so I'll keep it short and let you decide if it's worth your time. Fair enough?'<br><br>[WAIT FOR RESPONSE]<br><br>'Appreciate that. I work with a tool called Echo — it's a business intelligence platform built specifically for companies like SDA Building Services...'</div>
+        </div>
+        <div class="cl-matrix-panel">
+          <div class="cl-matrix-label">⚡ OBJECTION MATRIX</div>
+          <div class="cl-matrix-btn active">Too Expensive / $650 Too Much</div>
+          <div class="cl-matrix-btn">Not Interested</div>
+          <div class="cl-matrix-btn">We Already Have Enough Clients</div>
+          <div class="cl-matrix-btn">I Need to Think About It</div>
+          <div class="cl-matrix-btn">We Use Referrals</div>
+        </div>
+      </div>
+      <div class="cl-cockpit-bottombar">
+        <span class="cl-disp-pill green">Interested</span>
+        <span class="cl-disp-pill gold">Call Back</span>
+        <span class="cl-disp-pill">Closed ✓</span>
+        <span class="cl-disp-pill">Voicemail</span>
+        <span class="cl-disp-pill">Sent Info</span>
+        <span class="cl-disp-pill red">Not Interested</span>
+        <span class="cl-disp-pill">DNC</span>
+      </div>
+    </div>
+    <div class="cl-cockpit-copy">
+      <h3>The Script Is There.<br>The Objections Are Covered.<br><span>All You Do Is Call.</span></h3>
+      <p>The CLOISE cockpit is what you actually see while you're on the phone. Your script runs on the left — with the lead's real name and company merged in automatically. Your objection matrix sits on the right — 10 rebuttals, one click away.</p>
+      <ul>
+        <li>Merge tags auto-fill contact name, company, city, and phone into your script</li>
+        <li>One click on any objection button opens the full 3-loop rebuttal</li>
+        <li>Universal transition back gets you back into the script from any objection</li>
+        <li>Disposition bar at the bottom — one click, add a note, move to the next lead</li>
+        <li>Callback due? CLOISE alerts you and surfaces it at the top of the queue</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cl-objection">
+  <p class="cl-section-eyebrow">THE OBJECTION SYSTEM</p>
+  <h2 class="cl-section-heading">First Objection Is Never the Real One.<br>CLOISE Gives You Three Loops to Find Out.</h2>
+  <div class="cl-objection-grid">
+    <div class="cl-objection-card">
+      <div class="cl-objection-eyebrow">THE REALITY</div>
+      <div class="cl-objection-title">"Not Interested" Is a Reflex. Not a Decision.</div>
+      <div class="cl-objection-desc">Most cold callers hear the first pushback and fold. The truth is that 80% of first objections are reflexes — the prospect hasn't even processed what you said yet. The reps who close know this. They have a system for what comes next.</div>
+      <ul class="cl-objection-list">
+        <li>Most first objections are reflexes — not real decisions</li>
+        <li>Reps who wing it lose. Reps with a system close</li>
+        <li>Without structure, you either cave or push too hard and lose rapport</li>
+        <li>Training reps to handle objections properly takes months — CLOISE does it instantly</li>
+      </ul>
+    </div>
+    <div class="cl-objection-card">
+      <div class="cl-objection-eyebrow">THE CLOISE METHOD</div>
+      <div class="cl-objection-title">3 Loops. 10 Rebuttals. One Universal Close.</div>
+      <div class="cl-objection-desc">Every AI-generated script in CLOISE includes 10 custom rebuttals — each built on the exact objections real people give in your industry. Each rebuttal has three escalating loops before the universal close.</div>
+      <ul class="cl-objection-list">
+        <li>Loop 1: Clarify the real objection, deflect, counter, bridge back into script</li>
+        <li>Loop 2: Acknowledge, pivot to benefits, soft close attempt</li>
+        <li>Loop 3: Final counter, final bridge, final close attempt</li>
+        <li>Universal close fires after all three loops — no call ends without a proper attempt</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cl-insights">
+  <div class="cl-insights-inner">
+    <div class="cl-insights-copy">
+      <p style="color:#C9A227;font-size:10px;font-weight:700;letter-spacing:3px;margin-bottom:12px;">INSIGHTS DASHBOARD</p>
+      <h3>Know When to Call.<br>Know Who Responds.<br><span>Know What's Working.</span></h3>
+      <p>Every call you log in CLOISE feeds your Insights dashboard. Over time you build a real picture of your calling performance — not guesses, actual data from your sessions.</p>
+      <ul>
+        <li>Disposition breakdown — see exactly how your calls are landing</li>
+        <li>Best calling days ranked by warm rate — not just call volume</li>
+        <li>Best calling hours — know your peak conversion window</li>
+        <li>Industry response rates — see which verticals respond best</li>
+        <li>Filter by individual session or view all sessions combined</li>
+      </ul>
+    </div>
+    <div class="cl-insights-demo">
+      <div class="cl-insights-title">DISPOSITION BREAKDOWN</div>
+      <div class="cl-bar-row"><div class="cl-bar-label">Left Voicemail</div><div class="cl-bar-track"><div class="cl-bar-fill" style="width:100%;background:#7a9bb5;"></div></div><div class="cl-bar-val">8 (100%)</div></div>
+      <div style="margin-top:20px;" class="cl-insights-title">BEST CALLING DAYS</div>
+      <div class="cl-bar-row"><div class="cl-bar-label" style="color:#C9A227;font-weight:700;">Thursday</div><div class="cl-bar-track"><div class="cl-bar-fill" style="width:88%;background:#C9A227;"></div></div><div class="cl-bar-val" style="color:#C9A227;">Best</div></div>
+      <div class="cl-bar-row"><div class="cl-bar-label">Friday</div><div class="cl-bar-track"><div class="cl-bar-fill" style="width:12%;background:#2a3a4a;"></div></div><div class="cl-bar-val">1 call</div></div>
+      <div style="margin-top:20px;" class="cl-insights-title">BEST CALLING HOURS</div>
+      <div class="cl-bar-row"><div class="cl-bar-label" style="color:#C9A227;font-weight:700;">7pm</div><div class="cl-bar-track"><div class="cl-bar-fill" style="width:60%;background:#C9A227;"></div></div><div class="cl-bar-val" style="color:#C9A227;">Best</div></div>
+      <div class="cl-bar-row"><div class="cl-bar-label">10pm</div><div class="cl-bar-track"><div class="cl-bar-fill" style="width:88%;background:#2a3a4a;"></div></div><div class="cl-bar-val">7 calls</div></div>
+      <div class="cl-stat-row">
+        <div class="cl-stat"><div class="cl-stat-val">8</div><div class="cl-stat-label">Total Calls</div></div>
+        <div class="cl-stat"><div class="cl-stat-val">787</div><div class="cl-stat-label">Leads Loaded</div></div>
+        <div class="cl-stat"><div class="cl-stat-val">1</div><div class="cl-stat-label">Active Session</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cl-pricing">
+  <p class="cl-section-eyebrow" style="color:#E63946;text-align:center;font-size:10px;font-weight:700;letter-spacing:3px;margin-bottom:12px;">PRICING</p>
+  <h2 class="cl-pricing-heading">Simple Pricing. No Per-Minute Charges.</h2>
+  <p class="cl-pricing-sub">Pay for the cockpit, not the calls. Use your own phone, your own leads, your own dialer.</p>
+  <div class="cl-pricing-grid">
+    <div class="cl-price-card">
+      <div class="cl-price-plan">ESSENTIAL</div>
+      <div class="cl-price-amount">$49.99<span>/mo</span></div>
+      <div class="cl-price-seats">1 seat</div>
+      <div class="cl-price-gen">5 AI script generations per month</div>
+      <hr class="cl-price-divider">
+      <ul class="cl-price-features">
+        <li>Live call cockpit</li>
+        <li>AI script generation (EN, FR, ES, PT)</li>
+        <li>10 rebuttals with 3 loops each per script</li>
+        <li>Lead list upload via CSV</li>
+        <li>Session management — resume any time</li>
+        <li>Callback scheduling with alerts</li>
+        <li>CSV export</li>
+        <li>Script Vault — up to 10 scripts</li>
+        <li>Manual scripts — never counted against AI limit</li>
+      </ul>
+      <a href="https://cloise.monarchaitech.com" class="cl-price-btn outline">Sign In to CLOISE</a>
+    </div>
+    <div class="cl-price-card featured">
+      <div class="cl-price-featured-badge">MOST POPULAR</div>
+      <div class="cl-price-plan">PRO</div>
+      <div class="cl-price-amount">$99<span>/mo</span></div>
+      <div class="cl-price-seats">3 seats</div>
+      <div class="cl-price-gen">20 AI script generations per user per month</div>
+      <hr class="cl-price-divider">
+      <ul class="cl-price-features">
+        <li>Everything in Essential</li>
+        <li>3 team seats</li>
+        <li>Objection Library — save and search winning responses</li>
+        <li>Script PDF export</li>
+        <li>Multi-language script generation</li>
+        <li>Insights dashboard</li>
+        <li>Priority support</li>
+      </ul>
+      <a href="https://cloise.monarchaitech.com" class="cl-price-btn">Sign In to CLOISE</a>
+    </div>
+    <div class="cl-price-card">
+      <div class="cl-price-plan">BUSINESS</div>
+      <div class="cl-price-amount">$199<span>/mo</span></div>
+      <div class="cl-price-seats">10 seats</div>
+      <div class="cl-price-gen">50 AI script generations per user per month</div>
+      <hr class="cl-price-divider">
+      <ul class="cl-price-features">
+        <li>Everything in Pro</li>
+        <li>10 team seats</li>
+        <li>Advanced analytics</li>
+        <li>Dedicated support</li>
+      </ul>
+      <a href="https://cloise.monarchaitech.com" class="cl-price-btn outline">Sign In to CLOISE</a>
+    </div>
+  </div>
+  <div class="cl-addon-bar">
+    <div><div style="font-size:9px;font-weight:700;color:#7a9bb5;letter-spacing:2px;margin-bottom:6px;">TOKEN ADD-ON PACK</div><div style="font-size:15px;font-weight:700;color:#F8F6F1;margin-bottom:4px;">Need more AI generations?</div><div style="font-size:12px;color:#D8D2C8;">Buy additional generation packs any time — no plan upgrade required. Manual scripts never count against your limit.</div></div>
+    <div style="text-align:right;flex-shrink:0;"><div style="font-size:22px;font-weight:800;color:#E63946;">$15</div><div style="font-size:11px;color:#7a9bb5;">50 additional AI generations</div></div>
+  </div>
+</section>
+
+<section class="cl-comparison">
+  <div class="cl-comparison-inner">
+    <p class="cl-section-eyebrow">CLOISE VS THE ALTERNATIVES</p>
+    <h2 class="cl-section-heading">Generic Dialers Don't Have a Script.<br>Sales Trainers Don't Have a System.</h2>
+    <table class="cl-table">
+      <thead>
+        <tr><th>Feature</th><th class="cl-col">CLOISE</th><th class="other-col">Generic Dialers</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>AI-generated cold call scripts</td><td class="cl-col"><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td></tr>
+        <tr><td>Live objection handling system</td><td class="cl-col"><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td></tr>
+        <tr><td>3-loop rebuttal system per objection</td><td class="cl-col"><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td></tr>
+        <tr><td>Script + leads on one screen</td><td class="cl-col"><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td></tr>
+        <tr><td>Multi-language script generation</td><td class="cl-col"><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td></tr>
+        <tr><td>Objection Library — save winning responses</td><td class="cl-col"><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td></tr>
+        <tr><td>Session-based lead management</td><td class="cl-col"><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+        <tr><td>Callback scheduling with alerts</td><td class="cl-col"><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+        <tr><td>Insights dashboard</td><td class="cl-col"><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+        <tr><td>No per-minute call charges</td><td class="cl-col"><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td></tr>
+        <tr><td>Use your own phone / VOIP / mobile</td><td class="cl-col"><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td></tr>
+        <tr><td>Works alongside any calling platform</td><td class="cl-col"><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="cl-cta">
+  <div>
+    <h2 class="cl-cta-heading">Stop Winging Your Cold Calls.<br><span>Sign In and Start Closing.</span></h2>
+    <p class="cl-cta-body">CLOISE gives you the script, the objection system, the lead engine, and the insights to run a professional cold calling operation from day one. Your phone. Your leads. Your cockpit.</p>
+  </div>
+  <div class="cl-cta-btns">
+    <a href="https://cloise.monarchaitech.com" class="cl-btn-cta-primary">Sign In to CLOISE</a>
+    <a href="/contact" class="cl-btn-cta-outline">Talk to Us</a>
+  </div>
+</section>
+
+<style>
+body{margin:0;padding:0;background:#0B0B0B;}
+html{background:#0B0B0B;}
+.mt-footer{background:#0B0B0B;padding:56px 48px 28px;}
+.mt-footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px;}
+.mt-footer-logo img{height:50px;width:auto;margin-bottom:12px;display:block;background:#0d1117;padding:4px;}
+.mt-footer-desc{font-size:11px;color:#888;line-height:1.75;}
+.mt-footer-col-head{font-size:10px;font-weight:700;color:#F8F6F1;letter-spacing:1.5px;margin-bottom:14px;}
+.mt-footer-links{list-style:none;}
+.mt-footer-links li{margin-bottom:9px;}
+.mt-footer-links a{font-size:11px;color:#888;text-decoration:none;}
+.mt-footer-links a:hover{color:#C9A227;}
+.mt-footer-bottom{border-top:0.5px solid #222;padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.mt-footer-copy{font-size:10px;color:#555;}
+.mt-footer-email a{font-size:10px;color:#888;text-decoration:none;}
+@media(max-width:768px){.mt-footer{padding:40px 20px 20px;}.mt-footer-top{grid-template-columns:1fr;gap:32px;}.mt-footer-bottom{flex-direction:column;align-items:flex-start;gap:8px;}}
+</style>
+<footer class="mt-footer">
+  <div class="mt-footer-top">
+    <div>
+      <div class="mt-footer-logo">
+        <a href="/"><img src="/logo.png" alt="Monarch Technologies" /></a>
+      </div>
+      <p class="mt-footer-desc">Monarch Technologies builds Canadian business intelligence and productivity tools for professionals who need faster data, smarter workflows, and better prospecting.</p>
+    </div>
+    <div>
+      <div class="mt-footer-col-head">COMPANY</div>
+      <ul class="mt-footer-links">
+        <li><a href="/about">About Monarch</a></li>
+        <li><a href="/echo">Echo</a></li>
+        <li><a href="/grain">GRAIN</a></li>
+        <li><a href="/arc">ARC</a></li>
+        <li><a href="/cloise">CLOISE</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="mt-footer-col-head">RESOURCES</div>
+      <ul class="mt-footer-links">
+        <li><a href="/comparison">Comparison</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms-of-use">Terms of Use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mt-footer-bottom">
+    <span class="mt-footer-copy">© 2026 Monarch Technologies. A division of 2468123 Ontario Corp. All rights reserved.</span>
+    <span class="mt-footer-email"><a href="mailto:support@monarchaitech.com">support@monarchaitech.com</a></span>
+  </div>
+</footer>
+</body>
+</html>

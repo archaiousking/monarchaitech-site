@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" />
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:#F8F6F1;color:#111111;}
+.mt-nav{background:#0d1117;padding:0 48px;height:90px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1000;}
+.mt-nav-logo img{height:76px;width:auto;display:block;background:#0d1117;padding:4px;}
+.mt-nav-links{display:flex;gap:32px;align-items:center;}
+.mt-nav-links a{color:#D8D2C8;font-size:13px;text-decoration:none;letter-spacing:0.3px;transition:color 0.2s;}
+.mt-nav-links a:hover{color:#C9A227;}
+.mt-nav-cta{background:#C9A227;color:#111111 !important;font-size:12px;font-weight:700;padding:10px 20px;border-radius:3px;letter-spacing:0.5px;white-space:nowrap;}
+.mt-nav-cta:hover{background:#b8911f !important;}
+.mt-nav-dropdown{position:relative;}
+.mt-nav-dropdown > a{display:flex;align-items:center;gap:5px;cursor:pointer;}
+.mt-nav-dropdown > a::after{content:'▾';font-size:10px;color:#D8D2C8;}
+.mt-dropdown-menu{display:none;position:absolute;top:calc(100% + 12px);left:0;background:#0d1117;border:1px solid #1e2a3a;border-radius:6px;min-width:220px;overflow:hidden;z-index:2000;}
+.mt-dropdown-menu.open{display:block;}
+.mt-dropdown-menu a{display:flex;align-items:center;gap:10px;color:#D8D2C8;font-size:13px;padding:12px 16px;text-decoration:none;border-bottom:1px solid #1e2a3a;transition:background 0.2s,color 0.2s;}
+.mt-dropdown-menu a:last-child{border-bottom:none;}
+.mt-dropdown-menu a:hover{background:#1e2a3a;color:#C9A227;}
+.mt-dropdown-badge{font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:0.5px;}
+.mt-dropdown-badge.echo{background:#00b4d8;color:#0d1117;}
+.mt-dropdown-badge.grain{background:#C9A227;color:#111111;}
+.mt-dropdown-badge.arc{background:#FF2D78;color:#ffffff;}
+.mt-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+.mt-hamburger span{display:block;width:24px;height:2px;background:#D8D2C8;border-radius:2px;transition:all 0.3s;}
+.mt-mobile-menu{display:none;flex-direction:column;background:#0d1117;padding:20px 24px;border-top:1px solid #1e2a3a;}
+.mt-mobile-menu a{color:#D8D2C8;text-decoration:none;font-size:15px;padding:12px 0;border-bottom:1px solid #1e2a3a;display:block;}
+.mt-mobile-menu a:hover{color:#C9A227;}
+.mt-mobile-menu .mt-nav-cta{background:#C9A227;color:#111111 !important;font-weight:700;padding:12px 20px;border-radius:3px;text-align:center;margin-top:12px;border-bottom:none;}
+.mt-mobile-menu.open{display:flex;}
+.mt-mobile-submenu-label{color:#C9A227;font-size:10px;font-weight:700;letter-spacing:2px;padding:12px 0 4px;border-bottom:none !important;cursor:default;}
+@media(max-width:768px){
+.mt-nav{padding:0 20px;}
+.mt-nav-links{display:none;}
+.mt-hamburger{display:flex;}
+}
+</style>
+  <title>Terms of Use | Monarch Technologies — Monarch Technologies</title>
+</head>
+<body>
+
+<nav class="mt-nav">
+  <div class="mt-nav-logo">
+    <a href="/"><img src="/logo.png" alt="Monarch Technologies" /></a>
+  </div>
+  <div class="mt-nav-links">
+    <a href="/">Home</a>
+    <a href="/about">About Us</a>
+    <div class="mt-nav-dropdown" id="productsDropdown">
+      <a href="#" onclick="toggleDropdown(event)">Products</a>
+      <div class="mt-dropdown-menu" id="productsMenu">
+        <a href="/echo"><span class="mt-dropdown-badge echo">ECHO</span> Business Intelligence</a>
+        <a href="/grain"><span class="mt-dropdown-badge grain">GRAIN</span> Document Signing</a>
+        <a href="/arc"><span class="mt-dropdown-badge arc">ARC</span> Email Campaigns</a>
+        <a href="/cloise"><span class="mt-dropdown-badge" style="background:#E63946;color:#fff;">CLOISE</span> Cold Calling Cockpit</a>
+      </div>
+    </div>
+    <a href="/blog">Blog</a>
+    <a href="/contact">Contact Us</a>
+    <a href="https://echo.monarchaitech.com" class="mt-nav-cta">Try Echo Free</a>
+  </div>
+  <div class="mt-hamburger" id="mtHamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mt-mobile-menu" id="mtMobileMenu">
+  <a href="/">Home</a>
+  <a href="/about">About Us</a>
+  <span class="mt-mobile-submenu-label">PRODUCTS</span>
+  <a href="/echo" style="padding-left:12px;">↳ Echo — Business Intelligence</a>
+  <a href="/grain" style="padding-left:12px;">↳ GRAIN — Document Signing</a>
+  <a href="/arc" style="padding-left:12px;">↳ ARC — Email Campaigns</a>
+  <a href="/cloise" style="padding-left:12px;">↳ CLOISE — Cold Calling Cockpit</a>
+  <a href="/blog">Blog</a>
+  <a href="/contact">Contact Us</a>
+  <a href="https://echo.monarchaitech.com" class="mt-nav-cta">Try Echo Free</a>
+</div>
+
+<script>
+document.getElementById('mtHamburger').addEventListener('click', function() {
+  document.getElementById('mtMobileMenu').classList.toggle('open');
+});
+function toggleDropdown(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  document.getElementById('productsMenu').classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  var dropdown = document.getElementById('productsDropdown');
+  if (dropdown && !dropdown.contains(e.target)) {
+    document.getElementById('productsMenu').classList.remove('open');
+  }
+});
+</script>
+
+<style>
+.mt-page-hero{background:#111111;padding:60px 48px;text-align:center;}
+.mt-page-eyebrow{color:#C9A227;font-size:10px;font-weight:700;letter-spacing:3px;margin-bottom:14px;}
+.mt-page-title{font-size:36px;font-weight:700;color:#F8F6F1;margin-bottom:16px;}
+.mt-page-subtitle{font-size:15px;color:#D8D2C8;max-width:600px;margin:0 auto;line-height:1.7;}
+.mt-gold-line{width:44px;height:2px;background:#C9A227;margin:0 auto 40px;}
+.mt-content{max-width:860px;margin:0 auto;padding:64px 48px;}
+.mt-content h2{font-size:20px;font-weight:700;color:#111111;margin:36px 0 14px;padding-bottom:8px;border-bottom:1px solid #D8D2C8;}
+.mt-content h3{font-size:15px;font-weight:700;color:#111111;margin:22px 0 8px;}
+.mt-content p{font-size:14px;color:#2B2B2B;line-height:1.85;margin-bottom:14px;}
+.mt-content ul{padding-left:20px;margin-bottom:14px;}
+.mt-content ul li{font-size:14px;color:#2B2B2B;line-height:1.85;margin-bottom:6px;}
+.mt-content a{color:#C9A227;}
+@media(max-width:768px){.mt-page-hero{padding:48px 20px;}.mt-page-title{font-size:26px;}.mt-content{padding:48px 20px;}}
+</style>
+<div class="mt-page-hero">
+  <p class="mt-page-eyebrow">LEGAL</p>
+  <h1 class="mt-page-title">Terms of Use</h1>
+  <p class="mt-page-subtitle">Last updated: July 19, 2026</p>
+</div>
+<div class="mt-content">
+  <div class="mt-gold-line"></div>
+  <p>These Terms of Use govern your access to and use of all Monarch Technologies products and services, including Echo, GRAIN, and ARC, and the Monarch Technologies website (monarchaitech.com), operated by 2468123 Ontario Corp. By using any of our products or our website, you agree to be bound by these terms.</p>
+
+  <h2>1. Acceptance of Terms</h2>
+  <p>By accessing or using any Monarch Technologies product, you confirm that you are at least 18 years of age, have the legal capacity to enter into a binding agreement, and agree to comply with these Terms of Use and our Privacy Policy.</p>
+
+  <h2>2. Description of Services</h2>
+  <p>Monarch Technologies operates the following products under these Terms:</p>
+  <ul>
+    <li><strong>Echo</strong> — a Canadian business intelligence platform providing access to a database of active Canadian federal corporations, director lookup, company enrichment, and CSV export capabilities.</li>
+    <li><strong>GRAIN</strong> — a free document signing platform enabling users to send PDF and Word documents for electronic signature via connected email accounts.</li>
+    <li><strong>ARC</strong> — a free email campaign platform enabling users to send image-based email campaigns through their connected Outlook or Office 365 accounts.</li>
+  </ul>
+
+  <h2>3. Account Registration</h2>
+  <p>To access certain features of our products, you must register using a valid email address. You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account.</p>
+
+  <h2>4. Acceptable Use</h2>
+  <p>You agree to use Monarch Technologies products only for lawful purposes. You agree NOT to:</p>
+  <ul>
+    <li>Use our products for any unlawful purpose or in violation of applicable Canadian law</li>
+    <li>Harass, spam, or send unsolicited communications using data obtained through our products</li>
+    <li>Attempt to reverse engineer, scrape, or extract our underlying databases</li>
+    <li>Resell or redistribute data obtained through our products without written permission</li>
+    <li>Violate PIPEDA or any other applicable privacy legislation</li>
+    <li>Use connected email account access for any purpose beyond what is required to deliver the requested service functionality</li>
+  </ul>
+
+  <h2>5. Subscription Tiers and Credits</h2>
+  <p>Echo offers both free and paid subscription tiers. Credits reset monthly and do not roll over. GRAIN and ARC are provided free of charge. We reserve the right to modify pricing, features, and service availability with reasonable notice.</p>
+
+  <h2>6. Data and Intellectual Property</h2>
+  <p>All Monarch Technologies products, databases, platforms, software, and associated content are the intellectual property of Monarch Technologies. You are granted a limited, non-exclusive, non-transferable license to use our products for your personal or business purposes in accordance with these Terms.</p>
+
+  <h2>7. Data Accuracy</h2>
+  <p>Echo provides business intelligence data sourced from publicly available Canadian government records and web enrichment. We do not warrant that all data is complete, current, or error-free. Users are responsible for verifying information before acting on it.</p>
+
+  <h2>8. Connected Email Accounts</h2>
+  <p>Certain features of Monarch Technologies products require you to connect a Gmail or Microsoft Outlook account via OAuth authorization. By connecting your email account, you authorize Monarch Technologies to access your account solely for the purposes of delivering the requested service functionality. This access may include reading email data to extract business contact information from email signatures, sending emails on your behalf, and accessing connected cloud storage services to perform document conversion operations. This authorization is limited strictly to what is necessary to provide the service you have requested. You may revoke this authorization at any time through your Google or Microsoft account settings. Revocation will disable the relevant service features that depend on the connected account.</p>
+
+  <h2>9. Business Contact Data Collection</h2>
+  <p>By using free-tier features of Monarch Technologies products, you consent to the collection of business contact information — including name, company, address, and email — arising from your use of the service, including from document signing transactions, email signature extraction, and advertiser submissions. This data is used to build and maintain our Canadian business intelligence database. This collection is a core part of the free service model and is the consideration exchanged for free access to our products.</p>
+
+  <h2>10. GRAIN Document Signing</h2>
+  <p>GRAIN is provided as a free document signing service. Documents uploaded to GRAIN are stored temporarily and deleted permanently from our systems once all parties have completed signing. Users are responsible for ensuring they have the legal right to request signatures on documents they upload. Monarch Technologies is not a party to any agreement signed using GRAIN and accepts no liability for the content or legal effect of documents processed through the platform.</p>
+
+  <h2>11. Third-Party Advertising</h2>
+  <p>GRAIN displays advertisements from third-party advertisers as part of its free service model. All advertisers are manually reviewed before their advertisements are displayed. By using GRAIN, you agree to the display of advertisements as part of the free service experience.</p>
+
+  <h2>12. Limitation of Liability</h2>
+  <p>To the maximum extent permitted by applicable law, Monarch Technologies shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our products, including but not limited to loss of data, loss of revenue, or business interruption.</p>
+
+  <h2>13. Disclaimer of Warranties</h2>
+  <p>All Monarch Technologies products are provided "as is" and "as available" without warranties of any kind, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+
+  <h2>14. Termination</h2>
+  <p>We reserve the right to suspend or terminate your access to any Monarch Technologies product at any time for conduct that violates these Terms or that we determine, in our sole discretion, is harmful to our products, other users, or third parties.</p>
+
+  <h2>15. Governing Law</h2>
+  <p>These Terms shall be governed by and construed in accordance with the laws of the Province of Ontario and the federal laws of Canada applicable therein, without regard to conflict of law principles.</p>
+
+  <h2>16. Changes to Terms</h2>
+  <p>We reserve the right to modify these Terms at any time. Material changes will be communicated where possible. Continued use of any Monarch Technologies product after changes are posted constitutes acceptance of the updated Terms.</p>
+
+  <h2>17. Contact</h2>
+  <p><strong>Monarch Technologies</strong><br>A division of 2468123 Ontario Corp.<br><a href="mailto:support@monarchaitech.com">support@monarchaitech.com</a></p>
+</div>
+
+<style>
+body{margin:0;padding:0;background:#0B0B0B;}
+html{background:#0B0B0B;}
+.mt-footer{background:#0B0B0B;padding:56px 48px 28px;}
+.mt-footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px;}
+.mt-footer-logo img{height:50px;width:auto;margin-bottom:12px;display:block;background:#0d1117;padding:4px;}
+.mt-footer-desc{font-size:11px;color:#888;line-height:1.75;}
+.mt-footer-col-head{font-size:10px;font-weight:700;color:#F8F6F1;letter-spacing:1.5px;margin-bottom:14px;}
+.mt-footer-links{list-style:none;}
+.mt-footer-links li{margin-bottom:9px;}
+.mt-footer-links a{font-size:11px;color:#888;text-decoration:none;}
+.mt-footer-links a:hover{color:#C9A227;}
+.mt-footer-bottom{border-top:0.5px solid #222;padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.mt-footer-copy{font-size:10px;color:#555;}
+.mt-footer-email a{font-size:10px;color:#888;text-decoration:none;}
+@media(max-width:768px){.mt-footer{padding:40px 20px 20px;}.mt-footer-top{grid-template-columns:1fr;gap:32px;}.mt-footer-bottom{flex-direction:column;align-items:flex-start;gap:8px;}}
+</style>
+<footer class="mt-footer">
+  <div class="mt-footer-top">
+    <div>
+      <div class="mt-footer-logo">
+        <a href="/"><img src="/logo.png" alt="Monarch Technologies" /></a>
+      </div>
+      <p class="mt-footer-desc">Monarch Technologies builds Canadian business intelligence and productivity tools for professionals who need faster data, smarter workflows, and better prospecting.</p>
+    </div>
+    <div>
+      <div class="mt-footer-col-head">COMPANY</div>
+      <ul class="mt-footer-links">
+        <li><a href="/about">About Monarch</a></li>
+        <li><a href="/echo">Echo</a></li>
+        <li><a href="/grain">GRAIN</a></li>
+        <li><a href="/arc">ARC</a></li>
+        <li><a href="/cloise">CLOISE</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="mt-footer-col-head">RESOURCES</div>
+      <ul class="mt-footer-links">
+        <li><a href="/comparison">Comparison</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms-of-use">Terms of Use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mt-footer-bottom">
+    <span class="mt-footer-copy">© 2026 Monarch Technologies. A division of 2468123 Ontario Corp. All rights reserved.</span>
+    <span class="mt-footer-email"><a href="mailto:support@monarchaitech.com">support@monarchaitech.com</a></span>
+  </div>
+</footer>
+</body>
+</html>

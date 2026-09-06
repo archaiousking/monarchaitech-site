@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" />
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:#F8F6F1;color:#111111;}
+.mt-nav{background:#0d1117;padding:0 48px;height:90px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1000;}
+.mt-nav-logo img{height:76px;width:auto;display:block;background:#0d1117;padding:4px;}
+.mt-nav-links{display:flex;gap:32px;align-items:center;}
+.mt-nav-links a{color:#D8D2C8;font-size:13px;text-decoration:none;letter-spacing:0.3px;transition:color 0.2s;}
+.mt-nav-links a:hover{color:#C9A227;}
+.mt-nav-cta{background:#C9A227;color:#111111 !important;font-size:12px;font-weight:700;padding:10px 20px;border-radius:3px;letter-spacing:0.5px;white-space:nowrap;}
+.mt-nav-cta:hover{background:#b8911f !important;}
+.mt-nav-dropdown{position:relative;}
+.mt-nav-dropdown > a{display:flex;align-items:center;gap:5px;cursor:pointer;}
+.mt-nav-dropdown > a::after{content:'▾';font-size:10px;color:#D8D2C8;}
+.mt-dropdown-menu{display:none;position:absolute;top:calc(100% + 12px);left:0;background:#0d1117;border:1px solid #1e2a3a;border-radius:6px;min-width:220px;overflow:hidden;z-index:2000;}
+.mt-dropdown-menu.open{display:block;}
+.mt-dropdown-menu a{display:flex;align-items:center;gap:10px;color:#D8D2C8;font-size:13px;padding:12px 16px;text-decoration:none;border-bottom:1px solid #1e2a3a;transition:background 0.2s,color 0.2s;}
+.mt-dropdown-menu a:last-child{border-bottom:none;}
+.mt-dropdown-menu a:hover{background:#1e2a3a;color:#C9A227;}
+.mt-dropdown-badge{font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:0.5px;}
+.mt-dropdown-badge.echo{background:#00b4d8;color:#0d1117;}
+.mt-dropdown-badge.grain{background:#C9A227;color:#111111;}
+.mt-dropdown-badge.arc{background:#FF2D78;color:#ffffff;}
+.mt-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+.mt-hamburger span{display:block;width:24px;height:2px;background:#D8D2C8;border-radius:2px;transition:all 0.3s;}
+.mt-mobile-menu{display:none;flex-direction:column;background:#0d1117;padding:20px 24px;border-top:1px solid #1e2a3a;}
+.mt-mobile-menu a{color:#D8D2C8;text-decoration:none;font-size:15px;padding:12px 0;border-bottom:1px solid #1e2a3a;display:block;}
+.mt-mobile-menu a:hover{color:#C9A227;}
+.mt-mobile-menu .mt-nav-cta{background:#C9A227;color:#111111 !important;font-weight:700;padding:12px 20px;border-radius:3px;text-align:center;margin-top:12px;border-bottom:none;}
+.mt-mobile-menu.open{display:flex;}
+.mt-mobile-submenu-label{color:#C9A227;font-size:10px;font-weight:700;letter-spacing:2px;padding:12px 0 4px;border-bottom:none !important;cursor:default;}
+@media(max-width:768px){
+.mt-nav{padding:0 20px;}
+.mt-nav-links{display:none;}
+.mt-hamburger{display:flex;}
+}
+</style>
+  <title>GRAIN — Free Document Signing | Monarch Technologies — Monarch Technologies</title>
+</head>
+<body>
+
+<nav class="mt-nav">
+  <div class="mt-nav-logo">
+    <a href="/"><img src="/logo.png" alt="Monarch Technologies" /></a>
+  </div>
+  <div class="mt-nav-links">
+    <a href="/">Home</a>
+    <a href="/about">About Us</a>
+    <div class="mt-nav-dropdown" id="productsDropdown">
+      <a href="#" onclick="toggleDropdown(event)">Products</a>
+      <div class="mt-dropdown-menu" id="productsMenu">
+        <a href="/echo"><span class="mt-dropdown-badge echo">ECHO</span> Business Intelligence</a>
+        <a href="/grain"><span class="mt-dropdown-badge grain">GRAIN</span> Document Signing</a>
+        <a href="/arc"><span class="mt-dropdown-badge arc">ARC</span> Email Campaigns</a>
+        <a href="/cloise"><span class="mt-dropdown-badge" style="background:#E63946;color:#fff;">CLOISE</span> Cold Calling Cockpit</a>
+      </div>
+    </div>
+    <a href="/blog">Blog</a>
+    <a href="/contact">Contact Us</a>
+    <a href="https://echo.monarchaitech.com" class="mt-nav-cta">Try Echo Free</a>
+  </div>
+  <div class="mt-hamburger" id="mtHamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mt-mobile-menu" id="mtMobileMenu">
+  <a href="/">Home</a>
+  <a href="/about">About Us</a>
+  <span class="mt-mobile-submenu-label">PRODUCTS</span>
+  <a href="/echo" style="padding-left:12px;">↳ Echo — Business Intelligence</a>
+  <a href="/grain" style="padding-left:12px;">↳ GRAIN — Document Signing</a>
+  <a href="/arc" style="padding-left:12px;">↳ ARC — Email Campaigns</a>
+  <a href="/cloise" style="padding-left:12px;">↳ CLOISE — Cold Calling Cockpit</a>
+  <a href="/blog">Blog</a>
+  <a href="/contact">Contact Us</a>
+  <a href="https://echo.monarchaitech.com" class="mt-nav-cta">Try Echo Free</a>
+</div>
+
+<script>
+document.getElementById('mtHamburger').addEventListener('click', function() {
+  document.getElementById('mtMobileMenu').classList.toggle('open');
+});
+function toggleDropdown(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  document.getElementById('productsMenu').classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  var dropdown = document.getElementById('productsDropdown');
+  if (dropdown && !dropdown.contains(e.target)) {
+    document.getElementById('productsMenu').classList.remove('open');
+  }
+});
+</script>
+
+<style>
+.grain-hero{background:#0d1117;padding:80px 48px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.grain-hero-badge{display:inline-block;background:#1a2332;border:1px solid #C9A227;color:#C9A227;font-size:10px;font-weight:700;padding:5px 12px;border-radius:3px;letter-spacing:2px;margin-bottom:20px;}
+.grain-hero-eyebrow{color:#C9A227;font-size:10px;font-weight:700;letter-spacing:3px;margin-bottom:18px;}
+.grain-hero-headline{font-size:40px;font-weight:700;color:#F8F6F1;line-height:1.15;margin-bottom:14px;}
+.grain-hero-headline span{color:#C9A227;}
+.grain-hero-sub{font-size:15px;color:#D8D2C8;line-height:1.75;margin-bottom:32px;max-width:480px;}
+.grain-hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.grain-btn-primary{background:#C9A227;color:#111111;font-size:13px;font-weight:700;padding:13px 24px;border-radius:3px;text-decoration:none;letter-spacing:0.5px;display:inline-block;transition:background 0.2s;}
+.grain-btn-primary:hover{background:#b8911f;}
+.grain-btn-secondary{background:transparent;color:#F8F6F1;font-size:13px;font-weight:600;padding:13px 24px;border-radius:3px;text-decoration:none;letter-spacing:0.5px;border:1.5px solid #D8D2C8;display:inline-block;transition:all 0.2s;}
+.grain-btn-secondary:hover{background:#F8F6F1;color:#111111;}
+.grain-mockup{background:#111827;border-radius:12px;padding:24px;border:1px solid #1e2a3a;}
+.grain-mockup-header{display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid #1e2a3a;}
+.grain-mockup-logo{color:#C9A227;font-size:18px;font-weight:800;letter-spacing:3px;}
+.grain-mockup-sub{color:#7a9bb5;font-size:9px;letter-spacing:1.5px;}
+.grain-doc-card{background:#1a2332;border:1px solid #2a3a4a;border-radius:8px;padding:16px;margin-bottom:12px;}
+.grain-doc-card.active{border-color:#C9A227;}
+.grain-doc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.grain-doc-name{color:#F8F6F1;font-size:12px;font-weight:700;}
+.grain-doc-status{font-size:9px;font-weight:700;padding:3px 8px;border-radius:3px;}
+.grain-doc-status.pending{background:#2a1a00;color:#C9A227;border:1px solid #C9A227;}
+.grain-doc-status.signed{background:#1a3a2a;color:#00c97a;border:1px solid #00c97a;}
+.grain-doc-status.draft{background:#1a2332;color:#7a9bb5;border:1px solid #2a3a4a;}
+.grain-doc-meta{font-size:10px;color:#7a9bb5;}
+.grain-signers{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;}
+.grain-signer{font-size:9px;color:#D8D2C8;background:#0d1117;padding:3px 8px;border-radius:3px;}
+.grain-signer.done{color:#00c97a;}
+.grain-free-band{background:#C9A227;padding:28px 48px;text-align:center;}
+.grain-free-band p{font-size:14px;font-weight:700;color:#111111;letter-spacing:0.5px;}
+.grain-free-band span{font-size:11px;font-weight:400;color:#3a2e00;margin-left:8px;}
+.grain-features{background:#F8F6F1;padding:80px 48px;}
+.grain-section-eyebrow{color:#C9A227;font-size:10px;font-weight:700;letter-spacing:3px;text-align:center;margin-bottom:12px;}
+.grain-section-heading{font-size:28px;font-weight:700;color:#111111;text-align:center;line-height:1.3;margin-bottom:48px;}
+.grain-feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.grain-feature-card{background:white;border:0.5px solid #D8D2C8;border-radius:10px;padding:28px 24px;}
+.grain-feature-icon{width:48px;height:48px;border:1.5px solid #C9A227;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+.grain-feature-icon i{font-size:20px;color:#C9A227;}
+.grain-feature-title{font-size:15px;font-weight:700;color:#111111;margin-bottom:10px;}
+.grain-feature-desc{font-size:13px;color:#555;line-height:1.75;}
+.grain-how{background:#111111;padding:80px 48px;}
+.grain-how-heading{font-size:28px;font-weight:700;color:#F8F6F1;text-align:center;margin-bottom:48px;}
+.grain-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.grain-step{text-align:center;}
+.grain-step-num{width:40px;height:40px;border-radius:50%;background:#C9A227;color:#111111;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+.grain-step-icon{font-size:24px;color:#C9A227;margin-bottom:12px;}
+.grain-step-title{font-size:14px;font-weight:700;color:#F8F6F1;margin-bottom:8px;}
+.grain-step-desc{font-size:12px;color:#D8D2C8;line-height:1.7;}
+.grain-signing{background:#F8F6F1;padding:80px 48px;}
+.grain-signing-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px;}
+.grain-signing-card{background:#111111;border-radius:10px;padding:32px;}
+.grain-signing-card-eyebrow{color:#C9A227;font-size:9px;font-weight:700;letter-spacing:2px;margin-bottom:12px;}
+.grain-signing-card-title{font-size:20px;font-weight:700;color:#F8F6F1;margin-bottom:12px;}
+.grain-signing-card-desc{font-size:13px;color:#D8D2C8;line-height:1.75;margin-bottom:20px;}
+.grain-signing-card-list{list-style:none;}
+.grain-signing-card-list li{font-size:12px;color:#D8D2C8;padding:6px 0;border-bottom:0.5px solid #1e2a3a;display:flex;gap:10px;align-items:flex-start;}
+.grain-signing-card-list li:last-child{border-bottom:none;}
+.grain-signing-card-list li::before{content:"→";color:#C9A227;font-weight:700;flex-shrink:0;}
+.grain-comparison{background:#D8D2C8;padding:80px 48px;}
+.grain-comparison-inner{max-width:900px;margin:0 auto;}
+.grain-table{width:100%;border-collapse:collapse;background:white;border-radius:10px;overflow:hidden;border:0.5px solid #D8D2C8;margin-top:40px;}
+.grain-table th{padding:16px 20px;font-size:12px;font-weight:700;letter-spacing:1px;text-align:center;}
+.grain-table th:first-child{text-align:left;background:#F8F6F1;color:#111111;}
+.grain-table th.grain-col{background:#111111;color:#C9A227;}
+.grain-table th.other-col{background:#F8F6F1;color:#888;}
+.grain-table td{padding:14px 20px;font-size:13px;border-bottom:0.5px solid #F0EDE8;text-align:center;}
+.grain-table td:first-child{text-align:left;font-weight:600;color:#111111;background:#FAFAF8;}
+.grain-table td.grain-col{background:#fffdf5;font-weight:700;}
+.grain-table tr:last-child td{border-bottom:none;}
+.check-yes{color:#C9A227;font-size:16px;font-weight:700;}
+.check-no{color:#ccc;font-size:16px;}
+.check-partial{color:#aaa;font-size:14px;}
+.grain-summary{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px;}
+.grain-summary-card{background:white;border:0.5px solid #D8D2C8;border-radius:10px;padding:24px;}
+.grain-summary-card.grain-card{border-color:#C9A227;background:#fffdf5;}
+.grain-summary-title{font-size:14px;font-weight:700;color:#111111;margin-bottom:8px;}
+.grain-summary-price{font-size:22px;font-weight:700;color:#C9A227;margin-bottom:8px;}
+.grain-summary-desc{font-size:12px;color:#555;line-height:1.7;}
+.grain-cta{background:#111111;padding:72px 48px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;}
+.grain-cta-heading{font-size:28px;font-weight:700;color:#F8F6F1;margin-bottom:12px;}
+.grain-cta-heading span{color:#C9A227;}
+.grain-cta-body{font-size:14px;color:#D8D2C8;line-height:1.7;max-width:520px;}
+.grain-cta-btns{display:flex;flex-direction:column;gap:12px;min-width:190px;}
+.grain-btn-cta-primary{background:#C9A227;color:#111111;font-size:13px;font-weight:700;padding:13px 24px;border-radius:3px;text-decoration:none;letter-spacing:0.5px;text-align:center;display:block;}
+.grain-btn-cta-outline{background:transparent;color:#F8F6F1;font-size:13px;font-weight:600;padding:12px 24px;border-radius:3px;text-decoration:none;letter-spacing:0.5px;border:1px solid #D8D2C8;text-align:center;display:block;}
+@media(max-width:768px){
+.grain-hero{grid-template-columns:1fr;padding:48px 20px;gap:32px;}
+.grain-mockup{display:none;}
+.grain-hero-headline{font-size:28px;}
+.grain-free-band{padding:20px;}
+.grain-features{padding:48px 20px;}
+.grain-feature-grid{grid-template-columns:1fr;gap:16px;}
+.grain-how{padding:48px 20px;}
+.grain-steps{grid-template-columns:1fr 1fr;gap:20px;}
+.grain-signing{padding:48px 20px;}
+.grain-signing-grid{grid-template-columns:1fr;gap:20px;}
+.grain-comparison{padding:48px 20px;}
+.grain-table{display:block;overflow-x:auto;}
+.grain-summary{grid-template-columns:1fr;gap:16px;}
+.grain-cta{grid-template-columns:1fr;padding:48px 20px;gap:24px;}
+.grain-cta-btns{flex-direction:row;flex-wrap:wrap;}
+}
+@media(max-width:480px){.grain-steps{grid-template-columns:1fr;}}
+</style>
+
+<section class="grain-hero">
+  <div>
+    <div class="grain-hero-badge">ALWAYS FREE</div>
+    <p class="grain-hero-eyebrow">DOCUMENT SIGNING · MONARCH TECHNOLOGIES</p>
+    <h1 class="grain-hero-headline">Sign Documents.<br><span>Pay Nothing. Ever.</span></h1>
+    <p class="grain-hero-sub">GRAIN lets you upload PDF or Word documents, add signers, and send secure signing links — completely free, with no credit card and no limits.</p>
+    <div class="grain-hero-btns">
+      <a href="https://grain.monarchaitech.com" class="grain-btn-primary">Get Started Free</a>
+      <a href="#how-it-works" class="grain-btn-secondary">See How It Works</a>
+    </div>
+  </div>
+  <div class="grain-mockup">
+    <div class="grain-mockup-header">
+      <div><div class="grain-mockup-logo">GRAIN</div><div class="grain-mockup-sub">FREE DOCUMENT SIGNING · MONARCH TECHNOLOGIES</div></div>
+    </div>
+    <div class="grain-doc-card active">
+      <div class="grain-doc-top"><span class="grain-doc-name">Service Agreement — Q3 2026.pdf</span><span class="grain-doc-status pending">AWAITING</span></div>
+      <div class="grain-doc-meta">Sent July 14, 2026 · 2 signers</div>
+      <div class="grain-signers"><span class="grain-signer done">✓ James Okafor</span><span class="grain-signer">Pending: Sarah Chen</span></div>
+    </div>
+    <div class="grain-doc-card">
+      <div class="grain-doc-top"><span class="grain-doc-name">NDA — Contractor Onboarding.docx</span><span class="grain-doc-status signed">COMPLETED</span></div>
+      <div class="grain-doc-meta">Completed July 10, 2026 · 1 signer</div>
+      <div class="grain-signers"><span class="grain-signer done">✓ Marcus Webb</span></div>
+    </div>
+    <div class="grain-doc-card">
+      <div class="grain-doc-top"><span class="grain-doc-name">Proposal — Enterprise Package.pdf</span><span class="grain-doc-status draft">DRAFT</span></div>
+      <div class="grain-doc-meta">Created July 16, 2026 · Not yet sent</div>
+    </div>
+  </div>
+</section>
+
+<div class="grain-free-band">
+  <p>GRAIN is 100% free — forever. <span>No credit card. No trial period. No catch.</span></p>
+</div>
+
+<section class="grain-features">
+  <p class="grain-section-eyebrow">WHAT GRAIN DOES</p>
+  <h2 class="grain-section-heading">Everything You Need to Sign Documents.<br>Nothing You Don't.</h2>
+  <div class="grain-feature-grid">
+    <div class="grain-feature-card"><div class="grain-feature-icon"><i class="ti ti-file-certificate"></i></div><div class="grain-feature-title">PDF &amp; Word Support</div><div class="grain-feature-desc">Upload any PDF or Word document. Works with contracts, NDAs, proposals, agreements, and more.</div></div>
+    <div class="grain-feature-card"><div class="grain-feature-icon"><i class="ti ti-send"></i></div><div class="grain-feature-title">Secure Signing Links</div><div class="grain-feature-desc">Every signer receives a unique, secure link via email. No account required, no downloads, no friction.</div></div>
+    <div class="grain-feature-card"><div class="grain-feature-icon"><i class="ti ti-shield-check"></i></div><div class="grain-feature-title">Audit Certificate</div><div class="grain-feature-desc">Every completed document generates a tamper-evident audit certificate recording who signed, when, and from where.</div></div>
+    <div class="grain-feature-card"><div class="grain-feature-icon"><i class="ti ti-users-group"></i></div><div class="grain-feature-title">Multi-Signer Support</div><div class="grain-feature-desc">Send to multiple signers in sequence or all at once. The next signer is notified automatically when it's their turn.</div></div>
+    <div class="grain-feature-card"><div class="grain-feature-icon"><i class="ti ti-bell"></i></div><div class="grain-feature-title">Real-Time Notifications</div><div class="grain-feature-desc">Get notified the moment a signer views, completes, or declines your document.</div></div>
+    <div class="grain-feature-card"><div class="grain-feature-icon"><i class="ti ti-download"></i></div><div class="grain-feature-title">Download Completed Docs</div><div class="grain-feature-desc">Once all parties have signed, download your completed document with full audit certificate attached.</div></div>
+  </div>
+</section>
+
+<section class="grain-how" id="how-it-works">
+  <h2 class="grain-how-heading">From Upload to Signed in Minutes</h2>
+  <div class="grain-steps">
+    <div class="grain-step"><div class="grain-step-num">1</div><div class="grain-step-icon"><i class="ti ti-file-upload"></i></div><div class="grain-step-title">Upload Your Document</div><div class="grain-step-desc">Upload any PDF or Word file. GRAIN renders it instantly so you can see every page.</div></div>
+    <div class="grain-step"><div class="grain-step-num">2</div><div class="grain-step-icon"><i class="ti ti-signature"></i></div><div class="grain-step-title">Add Signers</div><div class="grain-step-desc">Add one or multiple signers by name and email. Set signing order if needed.</div></div>
+    <div class="grain-step"><div class="grain-step-num">3</div><div class="grain-step-icon"><i class="ti ti-mail"></i></div><div class="grain-step-title">Send for Signing</div><div class="grain-step-desc">Each signer receives a secure unique link by email. No account required to sign.</div></div>
+    <div class="grain-step"><div class="grain-step-num">4</div><div class="grain-step-icon"><i class="ti ti-circle-check"></i></div><div class="grain-step-title">Download When Done</div><div class="grain-step-desc">Once signed, download your completed document with full audit certificate. Done.</div></div>
+  </div>
+</section>
+
+<section class="grain-signing">
+  <p class="grain-section-eyebrow">SIGNING OPTIONS</p>
+  <h2 class="grain-section-heading">Single Signer or Multi-Signer.<br>Your Document, Your Rules.</h2>
+  <div class="grain-signing-grid">
+    <div class="grain-signing-card">
+      <div class="grain-signing-card-eyebrow">SINGLE SIGNER</div>
+      <div class="grain-signing-card-title">Fast, Simple, Done.</div>
+      <div class="grain-signing-card-desc">Upload your document and send one secure link to one signer. They sign, you get notified, the document is complete.</div>
+      <ul class="grain-signing-card-list">
+        <li>Perfect for NDAs, proposals, and simple agreements</li>
+        <li>Signer receives a secure unique link via email</li>
+        <li>Signed document and audit certificate generated instantly</li>
+        <li>You are notified the moment they sign</li>
+      </ul>
+    </div>
+    <div class="grain-signing-card">
+      <div class="grain-signing-card-eyebrow">MULTI-SIGNER</div>
+      <div class="grain-signing-card-title">Sequential or Simultaneous.</div>
+      <div class="grain-signing-card-desc">Send to multiple signers in a defined order, or to all signers at once. Each signer gets their own secure link.</div>
+      <ul class="grain-signing-card-list">
+        <li>Perfect for contracts, partnership agreements, and onboarding</li>
+        <li>Set signing order — next signer is notified automatically</li>
+        <li>Full audit trail shows every signer's timestamp</li>
+        <li>Document marked complete only when all parties have signed</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="grain-comparison">
+  <div class="grain-comparison-inner">
+    <p class="grain-section-eyebrow">COMPARISON</p>
+    <h2 class="grain-section-heading">GRAIN vs DocuSign.<br>Why Pay When Free Works Better?</h2>
+    <table class="grain-table">
+      <thead>
+        <tr><th>Feature</th><th class="grain-col">GRAIN</th><th class="other-col">DocuSign</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Price</td><td class="grain-col" style="color:#C9A227;font-weight:700;">Free — Always</td><td>$15–$65+/mo</td></tr>
+        <tr><td>PDF document signing</td><td class="grain-col"><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+        <tr><td>Word document signing</td><td class="grain-col"><span class="check-yes">✓</span></td><td><span class="check-partial">Limited</span></td></tr>
+        <tr><td>Multi-signer support</td><td class="grain-col"><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+        <tr><td>Sequential signing order</td><td class="grain-col"><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+        <tr><td>Audit certificate</td><td class="grain-col"><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+        <tr><td>No account required to sign</td><td class="grain-col"><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td></tr>
+        <tr><td>Unlimited documents</td><td class="grain-col"><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td></tr>
+        <tr><td>Credit card required</td><td class="grain-col" style="color:#00c97a;font-weight:700;">Never</td><td style="color:#c00;">Always</td></tr>
+      </tbody>
+    </table>
+    <div class="grain-summary">
+      <div class="grain-summary-card grain-card">
+        <div class="grain-summary-title">GRAIN</div>
+        <div class="grain-summary-price">Free — Forever</div>
+        <div class="grain-summary-desc">Unlimited documents, unlimited signers, multi-signer support, sequential signing, audit certificates. Everything you need to sign documents professionally — at zero cost.</div>
+      </div>
+      <div class="grain-summary-card">
+        <div class="grain-summary-title">DocuSign</div>
+        <div class="grain-summary-price">$15 — $65+/mo</div>
+        <div class="grain-summary-desc">Industry standard with broad integrations. Requires a paid plan for anything beyond basic use. Monthly document limits apply on entry-level plans.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="grain-cta">
+  <div>
+    <h2 class="grain-cta-heading">Stop Paying to <span>Sign Documents.</span></h2>
+    <p class="grain-cta-body">GRAIN gives you everything you need to sign documents professionally — for free, forever. No credit card, no trial, no limits.</p>
+  </div>
+  <div class="grain-cta-btns">
+    <a href="https://grain.monarchaitech.com" class="grain-btn-cta-primary">Get Started Free</a>
+    <a href="/contact" class="grain-btn-cta-outline">Contact Support</a>
+  </div>
+</section>
+
+<style>
+body{margin:0;padding:0;background:#0B0B0B;}
+html{background:#0B0B0B;}
+.mt-footer{background:#0B0B0B;padding:56px 48px 28px;}
+.mt-footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px;}
+.mt-footer-logo img{height:50px;width:auto;margin-bottom:12px;display:block;background:#0d1117;padding:4px;}
+.mt-footer-desc{font-size:11px;color:#888;line-height:1.75;}
+.mt-footer-col-head{font-size:10px;font-weight:700;color:#F8F6F1;letter-spacing:1.5px;margin-bottom:14px;}
+.mt-footer-links{list-style:none;}
+.mt-footer-links li{margin-bottom:9px;}
+.mt-footer-links a{font-size:11px;color:#888;text-decoration:none;}
+.mt-footer-links a:hover{color:#C9A227;}
+.mt-footer-bottom{border-top:0.5px solid #222;padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.mt-footer-copy{font-size:10px;color:#555;}
+.mt-footer-email a{font-size:10px;color:#888;text-decoration:none;}
+@media(max-width:768px){.mt-footer{padding:40px 20px 20px;}.mt-footer-top{grid-template-columns:1fr;gap:32px;}.mt-footer-bottom{flex-direction:column;align-items:flex-start;gap:8px;}}
+</style>
+<footer class="mt-footer">
+  <div class="mt-footer-top">
+    <div>
+      <div class="mt-footer-logo">
+        <a href="/"><img src="/logo.png" alt="Monarch Technologies" /></a>
+      </div>
+      <p class="mt-footer-desc">Monarch Technologies builds Canadian business intelligence and productivity tools for professionals who need faster data, smarter workflows, and better prospecting.</p>
+    </div>
+    <div>
+      <div class="mt-footer-col-head">COMPANY</div>
+      <ul class="mt-footer-links">
+        <li><a href="/about">About Monarch</a></li>
+        <li><a href="/echo">Echo</a></li>
+        <li><a href="/grain">GRAIN</a></li>
+        <li><a href="/arc">ARC</a></li>
+        <li><a href="/cloise">CLOISE</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="mt-footer-col-head">RESOURCES</div>
+      <ul class="mt-footer-links">
+        <li><a href="/comparison">Comparison</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms-of-use">Terms of Use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mt-footer-bottom">
+    <span class="mt-footer-copy">© 2026 Monarch Technologies. A division of 2468123 Ontario Corp. All rights reserved.</span>
+    <span class="mt-footer-email"><a href="mailto:support@monarchaitech.com">support@monarchaitech.com</a></span>
+  </div>
+</footer>
+</body>
+</html>

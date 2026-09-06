@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" />
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:#F8F6F1;color:#111111;}
+.mt-nav{background:#0d1117;padding:0 48px;height:90px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1000;}
+.mt-nav-logo img{height:76px;width:auto;display:block;background:#0d1117;padding:4px;}
+.mt-nav-links{display:flex;gap:32px;align-items:center;}
+.mt-nav-links a{color:#D8D2C8;font-size:13px;text-decoration:none;letter-spacing:0.3px;transition:color 0.2s;}
+.mt-nav-links a:hover{color:#C9A227;}
+.mt-nav-cta{background:#C9A227;color:#111111 !important;font-size:12px;font-weight:700;padding:10px 20px;border-radius:3px;letter-spacing:0.5px;white-space:nowrap;}
+.mt-nav-cta:hover{background:#b8911f !important;}
+.mt-nav-dropdown{position:relative;}
+.mt-nav-dropdown > a{display:flex;align-items:center;gap:5px;cursor:pointer;}
+.mt-nav-dropdown > a::after{content:'▾';font-size:10px;color:#D8D2C8;}
+.mt-dropdown-menu{display:none;position:absolute;top:calc(100% + 12px);left:0;background:#0d1117;border:1px solid #1e2a3a;border-radius:6px;min-width:220px;overflow:hidden;z-index:2000;}
+.mt-dropdown-menu.open{display:block;}
+.mt-dropdown-menu a{display:flex;align-items:center;gap:10px;color:#D8D2C8;font-size:13px;padding:12px 16px;text-decoration:none;border-bottom:1px solid #1e2a3a;transition:background 0.2s,color 0.2s;}
+.mt-dropdown-menu a:last-child{border-bottom:none;}
+.mt-dropdown-menu a:hover{background:#1e2a3a;color:#C9A227;}
+.mt-dropdown-badge{font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:0.5px;}
+.mt-dropdown-badge.echo{background:#00b4d8;color:#0d1117;}
+.mt-dropdown-badge.grain{background:#C9A227;color:#111111;}
+.mt-dropdown-badge.arc{background:#FF2D78;color:#ffffff;}
+.mt-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+.mt-hamburger span{display:block;width:24px;height:2px;background:#D8D2C8;border-radius:2px;transition:all 0.3s;}
+.mt-mobile-menu{display:none;flex-direction:column;background:#0d1117;padding:20px 24px;border-top:1px solid #1e2a3a;}
+.mt-mobile-menu a{color:#D8D2C8;text-decoration:none;font-size:15px;padding:12px 0;border-bottom:1px solid #1e2a3a;display:block;}
+.mt-mobile-menu a:hover{color:#C9A227;}
+.mt-mobile-menu .mt-nav-cta{background:#C9A227;color:#111111 !important;font-weight:700;padding:12px 20px;border-radius:3px;text-align:center;margin-top:12px;border-bottom:none;}
+.mt-mobile-menu.open{display:flex;}
+.mt-mobile-submenu-label{color:#C9A227;font-size:10px;font-weight:700;letter-spacing:2px;padding:12px 0 4px;border-bottom:none !important;cursor:default;}
+@media(max-width:768px){
+.mt-nav{padding:0 20px;}
+.mt-nav-links{display:none;}
+.mt-hamburger{display:flex;}
+}
+</style>
+  <title>Echo vs The Rest | Monarch Technologies — Monarch Technologies</title>
+</head>
+<body>
+
+<nav class="mt-nav">
+  <div class="mt-nav-logo">
+    <a href="/"><img src="/logo.png" alt="Monarch Technologies" /></a>
+  </div>
+  <div class="mt-nav-links">
+    <a href="/">Home</a>
+    <a href="/about">About Us</a>
+    <div class="mt-nav-dropdown" id="productsDropdown">
+      <a href="#" onclick="toggleDropdown(event)">Products</a>
+      <div class="mt-dropdown-menu" id="productsMenu">
+        <a href="/echo"><span class="mt-dropdown-badge echo">ECHO</span> Business Intelligence</a>
+        <a href="/grain"><span class="mt-dropdown-badge grain">GRAIN</span> Document Signing</a>
+        <a href="/arc"><span class="mt-dropdown-badge arc">ARC</span> Email Campaigns</a>
+        <a href="/cloise"><span class="mt-dropdown-badge" style="background:#E63946;color:#fff;">CLOISE</span> Cold Calling Cockpit</a>
+      </div>
+    </div>
+    <a href="/blog">Blog</a>
+    <a href="/contact">Contact Us</a>
+    <a href="https://echo.monarchaitech.com" class="mt-nav-cta">Try Echo Free</a>
+  </div>
+  <div class="mt-hamburger" id="mtHamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mt-mobile-menu" id="mtMobileMenu">
+  <a href="/">Home</a>
+  <a href="/about">About Us</a>
+  <span class="mt-mobile-submenu-label">PRODUCTS</span>
+  <a href="/echo" style="padding-left:12px;">↳ Echo — Business Intelligence</a>
+  <a href="/grain" style="padding-left:12px;">↳ GRAIN — Document Signing</a>
+  <a href="/arc" style="padding-left:12px;">↳ ARC — Email Campaigns</a>
+  <a href="/cloise" style="padding-left:12px;">↳ CLOISE — Cold Calling Cockpit</a>
+  <a href="/blog">Blog</a>
+  <a href="/contact">Contact Us</a>
+  <a href="https://echo.monarchaitech.com" class="mt-nav-cta">Try Echo Free</a>
+</div>
+
+<script>
+document.getElementById('mtHamburger').addEventListener('click', function() {
+  document.getElementById('mtMobileMenu').classList.toggle('open');
+});
+function toggleDropdown(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  document.getElementById('productsMenu').classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  var dropdown = document.getElementById('productsDropdown');
+  if (dropdown && !dropdown.contains(e.target)) {
+    document.getElementById('productsMenu').classList.remove('open');
+  }
+});
+</script>
+
+<style>
+.mt-page-hero{background:#111111;padding:72px 48px;text-align:center;}
+.mt-page-eyebrow{color:#C9A227;font-size:10px;font-weight:700;letter-spacing:3px;margin-bottom:14px;}
+.mt-page-title{font-size:40px;font-weight:700;color:#F8F6F1;margin-bottom:16px;}
+.mt-page-subtitle{font-size:15px;color:#D8D2C8;max-width:640px;margin:0 auto;line-height:1.75;}
+.mt-gold-line{width:44px;height:2px;background:#C9A227;margin:0 auto 48px;}
+.mt-comparison-body{max-width:1000px;margin:0 auto;padding:72px 48px;}
+.mt-comparison-body h2{font-size:24px;font-weight:700;color:#111111;text-align:center;margin-bottom:8px;}
+.mt-comparison-sub{font-size:14px;color:#555;text-align:center;margin-bottom:40px;}
+.mt-table{width:100%;border-collapse:collapse;background:white;border-radius:10px;overflow:hidden;border:0.5px solid #D8D2C8;}
+.mt-table th{padding:16px 20px;font-size:12px;font-weight:700;letter-spacing:1px;text-align:center;}
+.mt-table th:first-child{text-align:left;background:#F8F6F1;color:#111111;}
+.mt-table th.echo-col{background:#111111;color:#C9A227;}
+.mt-table th.other-col{background:#F8F6F1;color:#888;}
+.mt-table td{padding:14px 20px;font-size:13px;border-bottom:0.5px solid #F0EDE8;text-align:center;}
+.mt-table td:first-child{text-align:left;font-weight:600;color:#111111;background:#FAFAF8;}
+.mt-table td.echo-col{background:#fffdf5;font-weight:700;}
+.mt-table tr:last-child td{border-bottom:none;}
+.check-yes{color:#C9A227;font-size:16px;font-weight:700;}
+.check-no{color:#ccc;font-size:16px;}
+.check-partial{color:#aaa;font-size:14px;}
+.mt-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;}
+.mt-summary-card{background:white;border:0.5px solid #D8D2C8;border-radius:10px;padding:24px;}
+.mt-summary-card.echo-card{border-color:#C9A227;background:#fffdf5;}
+.mt-summary-title{font-size:14px;font-weight:700;color:#111111;margin-bottom:8px;}
+.mt-summary-price{font-size:22px;font-weight:700;color:#C9A227;margin-bottom:8px;}
+.mt-summary-desc{font-size:12px;color:#555;line-height:1.7;}
+.mt-cta-banner{background:#C9A227;padding:60px 48px;text-align:center;}
+.mt-cta-banner h2{font-size:28px;font-weight:700;color:#111111;margin-bottom:12px;}
+.mt-cta-banner p{font-size:15px;color:#2B2B2B;margin-bottom:28px;max-width:540px;margin-left:auto;margin-right:auto;line-height:1.7;}
+.mt-btn-dark{background:#111111;color:#F8F6F1;font-size:13px;font-weight:700;padding:13px 28px;border-radius:3px;text-decoration:none;letter-spacing:0.5px;display:inline-block;}
+@media(max-width:768px){.mt-page-hero{padding:48px 20px;}.mt-page-title{font-size:28px;}.mt-comparison-body{padding:48px 20px;}.mt-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;}.mt-summary{grid-template-columns:1fr;gap:16px;}.mt-cta-banner{padding:48px 20px;}.mt-cta-banner h2{font-size:22px;}}
+</style>
+<div class="mt-page-hero">
+  <p class="mt-page-eyebrow">COMPARISON</p>
+  <h1 class="mt-page-title">Echo vs The Rest</h1>
+  <p class="mt-page-subtitle">Most business intelligence tools treat Canada as an afterthought. See how Echo compares to the global platforms when it comes to Canadian B2B prospecting.</p>
+</div>
+<div class="mt-comparison-body">
+  <div class="mt-gold-line"></div>
+  <h2>Feature Comparison</h2>
+  <p class="mt-comparison-sub">Echo is built specifically for Canadian professionals. Global tools are built for everyone — which means they serve no one particularly well in Canada.</p>
+  <table class="mt-table">
+    <thead>
+      <tr><th>Feature</th><th class="echo-col">ECHO</th><th class="other-col">ZoomInfo</th><th class="other-col">Apollo</th><th class="other-col">Hunter.io</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Canadian corporation database</td><td class="echo-col"><span class="check-yes">✓</span></td><td><span class="check-partial">Partial</span></td><td><span class="check-partial">Partial</span></td><td><span class="check-no">✗</span></td></tr>
+      <tr><td>Director lookup</td><td class="echo-col"><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td><td><span class="check-no">✗</span></td><td><span class="check-no">✗</span></td></tr>
+      <tr><td>Province filtering</td><td class="echo-col"><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td><td><span class="check-no">✗</span></td><td><span class="check-no">✗</span></td></tr>
+      <tr><td>Corporation number search</td><td class="echo-col"><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td><td><span class="check-no">✗</span></td><td><span class="check-no">✗</span></td></tr>
+      <tr><td>Chrome extension</td><td class="echo-col"><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+      <tr><td>Company enrichment</td><td class="echo-col"><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+      <tr><td>CSV export</td><td class="echo-col"><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
+      <tr><td>Free tier available</td><td class="echo-col"><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td><td><span class="check-partial">Limited</span></td><td><span class="check-partial">Limited</span></td></tr>
+      <tr><td>PIPEDA compliant</td><td class="echo-col"><span class="check-yes">✓</span></td><td><span class="check-partial">Partial</span></td><td><span class="check-partial">Partial</span></td><td><span class="check-partial">Partial</span></td></tr>
+      <tr><td>Data stored in Canada</td><td class="echo-col"><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td><td><span class="check-no">✗</span></td><td><span class="check-no">✗</span></td></tr>
+      <tr><td>Starting price</td><td class="echo-col" style="color:#C9A227;font-weight:700;">Free</td><td>$15,000+/yr</td><td>$49+/mo</td><td>$34+/mo</td></tr>
+    </tbody>
+  </table>
+  <div class="mt-summary">
+    <div class="mt-summary-card echo-card">
+      <div class="mt-summary-title">Echo</div>
+      <div class="mt-summary-price">Free — $99/mo</div>
+      <div class="mt-summary-desc">Built specifically for Canadian B2B professionals. The only tool with a 642,000+ Canadian federal corporation database, director lookup, and province filtering. PIPEDA compliant, data stored in Canada.</div>
+    </div>
+    <div class="mt-summary-card">
+      <div class="mt-summary-title">ZoomInfo</div>
+      <div class="mt-summary-price">$15,000+/yr</div>
+      <div class="mt-summary-desc">Enterprise-focused global database. Strong US coverage. Canada is a secondary market. No director lookup or province filtering. Requires annual contracts.</div>
+    </div>
+    <div class="mt-summary-card">
+      <div class="mt-summary-title">Apollo / Hunter.io</div>
+      <div class="mt-summary-price">$34 — $99/mo</div>
+      <div class="mt-summary-desc">Email-focused prospecting tools with global reach. Limited Canadian-specific data. No corporation number search or province filtering. Primarily US-centric databases.</div>
+    </div>
+  </div>
+</div>
+<section class="mt-cta-banner">
+  <h2>The Canadian Choice is Clear</h2>
+  <p>If you prospect, recruit, or do business in Canada — Echo is the only tool built specifically for you.</p>
+  <a href="https://echo.monarchaitech.com" class="mt-btn-dark">Try Echo Free →</a>
+</section>
+
+<style>
+body{margin:0;padding:0;background:#0B0B0B;}
+html{background:#0B0B0B;}
+.mt-footer{background:#0B0B0B;padding:56px 48px 28px;}
+.mt-footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px;}
+.mt-footer-logo img{height:50px;width:auto;margin-bottom:12px;display:block;background:#0d1117;padding:4px;}
+.mt-footer-desc{font-size:11px;color:#888;line-height:1.75;}
+.mt-footer-col-head{font-size:10px;font-weight:700;color:#F8F6F1;letter-spacing:1.5px;margin-bottom:14px;}
+.mt-footer-links{list-style:none;}
+.mt-footer-links li{margin-bottom:9px;}
+.mt-footer-links a{font-size:11px;color:#888;text-decoration:none;}
+.mt-footer-links a:hover{color:#C9A227;}
+.mt-footer-bottom{border-top:0.5px solid #222;padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.mt-footer-copy{font-size:10px;color:#555;}
+.mt-footer-email a{font-size:10px;color:#888;text-decoration:none;}
+@media(max-width:768px){.mt-footer{padding:40px 20px 20px;}.mt-footer-top{grid-template-columns:1fr;gap:32px;}.mt-footer-bottom{flex-direction:column;align-items:flex-start;gap:8px;}}
+</style>
+<footer class="mt-footer">
+  <div class="mt-footer-top">
+    <div>
+      <div class="mt-footer-logo">
+        <a href="/"><img src="/logo.png" alt="Monarch Technologies" /></a>
+      </div>
+      <p class="mt-footer-desc">Monarch Technologies builds Canadian business intelligence and productivity tools for professionals who need faster data, smarter workflows, and better prospecting.</p>
+    </div>
+    <div>
+      <div class="mt-footer-col-head">COMPANY</div>
+      <ul class="mt-footer-links">
+        <li><a href="/about">About Monarch</a></li>
+        <li><a href="/echo">Echo</a></li>
+        <li><a href="/grain">GRAIN</a></li>
+        <li><a href="/arc">ARC</a></li>
+        <li><a href="/cloise">CLOISE</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="mt-footer-col-head">RESOURCES</div>
+      <ul class="mt-footer-links">
+        <li><a href="/comparison">Comparison</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms-of-use">Terms of Use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mt-footer-bottom">
+    <span class="mt-footer-copy">© 2026 Monarch Technologies. A division of 2468123 Ontario Corp. All rights reserved.</span>
+    <span class="mt-footer-email"><a href="mailto:support@monarchaitech.com">support@monarchaitech.com</a></span>
+  </div>
+</footer>
+</body>
+</html>
