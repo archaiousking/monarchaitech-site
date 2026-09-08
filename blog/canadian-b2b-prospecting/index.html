@@ -75,6 +75,29 @@ body{font-family:'Inter',system-ui,sans-serif;background:#F8F6F1;color:#111111;}
 .mt-btn-primary{background:#C9A227;color:#111111;font-size:13px;font-weight:700;padding:13px 28px;border-radius:3px;text-decoration:none;letter-spacing:0.5px;display:inline-block;}
 .mt-btn-primary:hover{background:#b8911f;}
 
+
+/* Images */
+.mt-article-img{width:100%;border-radius:8px;margin:36px 0;display:block;object-fit:cover;}
+.mt-article-img-hero{height:420px;}
+.mt-article-img-inline{height:320px;}
+.mt-article-img-caption{font-size:11px;color:#999;text-align:center;margin-top:-28px;margin-bottom:36px;}
+.mt-echo-mock{background:#0d1117;border-radius:10px;padding:28px;margin:36px 0;border:1px solid #1e2a3a;font-family:'Inter',system-ui,sans-serif;}
+.mt-echo-mock-bar{background:#1a2332;border-radius:6px;padding:10px 16px;display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+.mt-echo-mock-icon{color:#C9A227;font-size:14px;}
+.mt-echo-mock-input{color:#D8D2C8;font-size:13px;flex:1;}
+.mt-echo-mock-btn{background:#C9A227;color:#111;font-size:11px;font-weight:700;padding:6px 14px;border-radius:3px;letter-spacing:0.5px;}
+.mt-echo-mock-result{background:#111e2e;border-radius:6px;padding:16px 20px;margin-bottom:10px;border:0.5px solid #1e2a3a;}
+.mt-echo-mock-result:last-child{margin-bottom:0;}
+.mt-echo-mock-co{font-size:14px;font-weight:700;color:#F8F6F1;margin-bottom:4px;}
+.mt-echo-mock-meta{font-size:11px;color:#7a9bb5;display:flex;gap:14px;flex-wrap:wrap;margin-bottom:10px;}
+.mt-echo-mock-tags{display:flex;gap:6px;flex-wrap:wrap;}
+.mt-echo-mock-tag{font-size:9px;font-weight:700;padding:3px 8px;border-radius:3px;letter-spacing:0.5px;}
+.mt-echo-mock-tag.director{background:#00b4d8;color:#0d1117;}
+.mt-echo-mock-tag.phone{background:#2a3a4a;color:#D8D2C8;}
+.mt-echo-mock-tag.email{background:#2a3a4a;color:#D8D2C8;}
+.mt-echo-mock-label{font-size:10px;color:#C9A227;font-weight:700;letter-spacing:1.5px;margin-bottom:12px;}
+@media(max-width:768px){.mt-article-img-hero{height:220px;}.mt-article-img-inline{height:200px;}}
+
 @media(max-width:768px){
 .mt-article-hero{padding:48px 20px 40px;}
 .mt-article-title{font-size:26px;}
@@ -119,7 +142,7 @@ body{margin:0;padding:0;}
     </div>
     <a href="/blog">Blog</a>
     <a href="/contact">Contact Us</a>
-    <a href="https://echo.monarchaitech.com" class="mt-nav-cta">Try Echo Free</a>
+    <a href="https://chromewebstore.google.com/search/Echo%20%E2%80%94%20Business%20Intelligence%20by%20Monarch%20Technologies" class="mt-nav-cta">Try Echo Free</a>
   </div>
   <div class="mt-hamburger" id="mtHamburger">
     <span></span><span></span><span></span>
@@ -136,7 +159,7 @@ body{margin:0;padding:0;}
   <a href="/cloise" style="padding-left:12px;">&#8627; CLOISE — Cold Calling Cockpit</a>
   <a href="/blog">Blog</a>
   <a href="/contact">Contact Us</a>
-  <a href="https://echo.monarchaitech.com" class="mt-nav-cta">Try Echo Free</a>
+  <a href="https://chromewebstore.google.com/search/Echo%20%E2%80%94%20Business%20Intelligence%20by%20Monarch%20Technologies" class="mt-nav-cta">Try Echo Free</a>
 </div>
 
 <script>
@@ -175,6 +198,15 @@ document.addEventListener('click', function(e) {
 
 <!-- Article Body -->
 <div class="mt-article-body">
+
+
+  <!-- Hero image: person on a cold call -->
+  <img
+    src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&q=80&auto=format&fit=crop"
+    alt="Sales professional making a B2B prospecting call"
+    class="mt-article-img mt-article-img-hero"
+  />
+  <p class="mt-article-img-caption">Preparation before the call is what separates a productive prospecting day from an unproductive one.</p>
 
   <p>Good prospecting is not about having the biggest list. It is about having the <strong>right list</strong>.</p>
 
@@ -220,6 +252,15 @@ document.addEventListener('click', function(e) {
 
   <p>Canadian businesses have a specific need. They need to find Canadian companies, understand Canadian corporate structures, identify the people connected to those businesses, and build prospecting lists that make sense for the market they are actually selling into.</p>
 
+
+  <!-- Canadian map image -->
+  <img
+    src="https://images.unsplash.com/photo-1517935706615-2717063c2225?w=1200&q=80&auto=format&fit=crop"
+    alt="Canada — Canadian business market"
+    class="mt-article-img mt-article-img-inline"
+  />
+  <p class="mt-article-img-caption">Canada has an enormous number of businesses across every province — but the right approach to prospecting here looks different from any other market.</p>
+
   <h2>Property Management: A Case Study in Strategic Prospecting</h2>
 
   <p>Property management is one of the best examples of what deeper prospecting can mean in practice. Imagine a commercial cleaning company wants to win contracts for large buildings. Instead of searching broadly for any business that needs cleaning, the salesperson researches property management companies and the people responsible for those portfolios.</p>
@@ -251,12 +292,63 @@ document.addEventListener('click', function(e) {
 
   <p>The future of prospecting is not about having more leads. It is about having better intelligence before making contact. In competitive industries like commercial services, where everyone has access to a phone and a website, preparation is part of the competitive advantage. The salesperson who knows more before the conversation begins has a genuine edge.</p>
 
+
+  <!-- Echo interface mock -->
+  <div class="mt-echo-mock">
+    <p class="mt-echo-mock-label">ECHO — CANADIAN BUSINESS INTELLIGENCE</p>
+    <div class="mt-echo-mock-bar">
+      <span class="mt-echo-mock-icon"><i class="ti ti-search"></i></span>
+      <span class="mt-echo-mock-input">Property management companies — Ontario</span>
+      <span class="mt-echo-mock-btn">Search</span>
+    </div>
+    <div class="mt-echo-mock-result">
+      <div class="mt-echo-mock-co">Greenfield Property Management Inc.</div>
+      <div class="mt-echo-mock-meta">
+        <span>📍 Toronto, ON</span>
+        <span>🏢 Active Corporation</span>
+        <span>Incorporated 2014</span>
+      </div>
+      <div class="mt-echo-mock-tags">
+        <span class="mt-echo-mock-tag director">Director: James Whitfield</span>
+        <span class="mt-echo-mock-tag phone">📞 Enrich for phone</span>
+        <span class="mt-echo-mock-tag email">✉ Enrich for email</span>
+      </div>
+    </div>
+    <div class="mt-echo-mock-result">
+      <div class="mt-echo-mock-co">Hartwell Commercial Properties Ltd.</div>
+      <div class="mt-echo-mock-meta">
+        <span>📍 Mississauga, ON</span>
+        <span>🏢 Active Corporation</span>
+        <span>Incorporated 2009</span>
+      </div>
+      <div class="mt-echo-mock-tags">
+        <span class="mt-echo-mock-tag director">Director: Sandra Okoye</span>
+        <span class="mt-echo-mock-tag phone">📞 Enrich for phone</span>
+        <span class="mt-echo-mock-tag email">✉ Enrich for email</span>
+      </div>
+    </div>
+    <div class="mt-echo-mock-result">
+      <div class="mt-echo-mock-co">Crestview Building Services Ontario Corp.</div>
+      <div class="mt-echo-mock-meta">
+        <span>📍 Ottawa, ON</span>
+        <span>🏢 Active Corporation</span>
+        <span>Incorporated 2017</span>
+      </div>
+      <div class="mt-echo-mock-tags">
+        <span class="mt-echo-mock-tag director">Director: Marcus Pelletier</span>
+        <span class="mt-echo-mock-tag phone">📞 Enrich for phone</span>
+        <span class="mt-echo-mock-tag email">✉ Enrich for email</span>
+      </div>
+    </div>
+  </div>
+  <p class="mt-article-img-caption">Echo returns active Canadian corporations with director names — the starting point for every prospecting conversation.</p>
+
   <!-- CTA -->
   <div class="mt-article-cta">
     <p class="mt-article-cta-eyebrow">CANADIAN BUSINESS INTELLIGENCE</p>
     <h3>Start Building Better Prospect Lists</h3>
     <p>Search 642,000+ active Canadian corporations, identify directors, enrich company records, and build targeted prospecting lists — all in one place.</p>
-    <a href="https://echo.monarchaitech.com" class="mt-btn-primary">Try Echo Free</a>
+    <a href="https://chromewebstore.google.com/search/Echo%20%E2%80%94%20Business%20Intelligence%20by%20Monarch%20Technologies" class="mt-btn-primary">Try Echo Free</a>
   </div>
 
 </div>
