@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Good prospecting is not about having the biggest list. It is about having the right one. A guide to Canadian B2B prospecting for service businesses." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" />
+<title>Canadian B2B Prospecting: How to Find the Right Companies and Decision Makers | Monarch Blog</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:#F8F6F1;color:#111111;}
+.mt-nav{background:#0d1117;padding:0 48px;height:90px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1000;}
+.mt-nav-logo img{height:76px;width:auto;display:block;background:#0d1117;padding:4px;}
+.mt-nav-links{display:flex;gap:32px;align-items:center;}
+.mt-nav-links a{color:#D8D2C8;font-size:13px;text-decoration:none;letter-spacing:0.3px;transition:color 0.2s;}
+.mt-nav-links a:hover{color:#C9A227;}
+.mt-nav-cta{background:#C9A227;color:#111111 !important;font-size:12px;font-weight:700;padding:10px 20px;border-radius:3px;letter-spacing:0.5px;white-space:nowrap;}
+.mt-nav-cta:hover{background:#b8911f !important;}
+.mt-nav-dropdown{position:relative;}
+.mt-nav-dropdown > a{display:flex;align-items:center;gap:5px;cursor:pointer;}
+.mt-nav-dropdown > a::after{content:'▾';font-size:10px;color:#D8D2C8;}
+.mt-dropdown-menu{display:none;position:absolute;top:calc(100% + 12px);left:0;background:#0d1117;border:1px solid #1e2a3a;border-radius:6px;min-width:220px;overflow:hidden;z-index:2000;}
+.mt-dropdown-menu.open{display:block;}
+.mt-dropdown-menu a{display:flex;align-items:center;gap:10px;color:#D8D2C8;font-size:13px;padding:12px 16px;text-decoration:none;border-bottom:1px solid #1e2a3a;transition:background 0.2s,color 0.2s;}
+.mt-dropdown-menu a:last-child{border-bottom:none;}
+.mt-dropdown-menu a:hover{background:#1e2a3a;color:#C9A227;}
+.mt-dropdown-badge{font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:0.5px;}
+.mt-dropdown-badge.echo{background:#00b4d8;color:#0d1117;}
+.mt-dropdown-badge.grain{background:#C9A227;color:#111111;}
+.mt-dropdown-badge.arc{background:#FF2D78;color:#ffffff;}
+.mt-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+.mt-hamburger span{display:block;width:24px;height:2px;background:#D8D2C8;border-radius:2px;transition:all 0.3s;}
+.mt-mobile-menu{display:none;flex-direction:column;background:#0d1117;padding:20px 24px;border-top:1px solid #1e2a3a;}
+.mt-mobile-menu a{color:#D8D2C8;text-decoration:none;font-size:15px;padding:12px 0;border-bottom:1px solid #1e2a3a;display:block;}
+.mt-mobile-menu a:hover{color:#C9A227;}
+.mt-mobile-menu .mt-nav-cta{background:#C9A227;color:#111111 !important;font-weight:700;padding:12px 20px;border-radius:3px;text-align:center;margin-top:12px;border-bottom:none;}
+.mt-mobile-menu.open{display:flex;}
+.mt-mobile-submenu-label{color:#C9A227;font-size:10px;font-weight:700;letter-spacing:2px;padding:12px 0 4px;border-bottom:none !important;cursor:default;}
+@media(max-width:768px){
+.mt-nav{padding:0 20px;}
+.mt-nav-links{display:none;}
+.mt-hamburger{display:flex;}
+}
+
+/* Article layout */
+.mt-article-hero{background:#111111;padding:72px 48px 56px;}
+.mt-article-back{display:inline-flex;align-items:center;gap:6px;color:#C9A227;font-size:12px;font-weight:600;letter-spacing:0.5px;text-decoration:none;margin-bottom:32px;}
+.mt-article-back:hover{opacity:0.8;}
+.mt-article-eyebrow{color:#C9A227;font-size:10px;font-weight:700;letter-spacing:3px;margin-bottom:16px;}
+.mt-article-title{font-size:38px;font-weight:700;color:#F8F6F1;max-width:760px;line-height:1.25;margin-bottom:24px;}
+.mt-article-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.mt-article-author{display:flex;align-items:center;gap:8px;}
+.mt-article-avatar{width:32px;height:32px;border-radius:50%;background:#C9A227;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#111111;}
+.mt-article-author-name{font-size:13px;color:#D8D2C8;font-weight:600;}
+.mt-article-date{font-size:12px;color:#7a9bb5;}
+.mt-article-dot{color:#2a3a4a;font-size:14px;}
+.mt-article-readtime{font-size:12px;color:#7a9bb5;}
+
+.mt-article-body{max-width:740px;margin:0 auto;padding:64px 48px 80px;}
+.mt-article-body p{font-size:16px;line-height:1.85;color:#2a2a2a;margin-bottom:24px;}
+.mt-article-body h2{font-size:22px;font-weight:700;color:#111111;margin:48px 0 16px;padding-top:8px;border-top:2px solid #C9A227;display:inline-block;}
+.mt-article-body h2-wrap{margin:48px 0 16px;}
+.mt-article-body ul{margin:0 0 24px 0;padding-left:20px;}
+.mt-article-body ul li{font-size:16px;line-height:1.85;color:#2a2a2a;margin-bottom:8px;}
+.mt-article-body blockquote{border-left:3px solid #C9A227;padding:16px 24px;background:white;margin:32px 0;border-radius:0 4px 4px 0;}
+.mt-article-body blockquote p{font-size:15px;color:#444;font-style:italic;margin-bottom:0;}
+.mt-article-body strong{color:#111111;font-weight:700;}
+
+.mt-article-cta{background:#111111;border-radius:10px;padding:48px;margin:56px 0 0;text-align:center;}
+.mt-article-cta-eyebrow{color:#C9A227;font-size:10px;font-weight:700;letter-spacing:3px;margin-bottom:12px;}
+.mt-article-cta h3{font-size:24px;font-weight:700;color:#F8F6F1;margin-bottom:12px;}
+.mt-article-cta p{font-size:14px;color:#D8D2C8;line-height:1.75;max-width:480px;margin:0 auto 28px;}
+.mt-btn-primary{background:#C9A227;color:#111111;font-size:13px;font-weight:700;padding:13px 28px;border-radius:3px;text-decoration:none;letter-spacing:0.5px;display:inline-block;}
+.mt-btn-primary:hover{background:#b8911f;}
+
+@media(max-width:768px){
+.mt-article-hero{padding:48px 20px 40px;}
+.mt-article-title{font-size:26px;}
+.mt-article-body{padding:40px 20px 60px;}
+.mt-article-cta{padding:36px 20px;}
+}
+
+/* Footer */
+body{margin:0;padding:0;}
+.mt-footer{background:#0B0B0B;padding:56px 48px 28px;}
+.mt-footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px;}
+.mt-footer-logo img{height:50px;width:auto;margin-bottom:12px;display:block;background:#0d1117;padding:4px;}
+.mt-footer-desc{font-size:11px;color:#888;line-height:1.75;}
+.mt-footer-col-head{font-size:10px;font-weight:700;color:#F8F6F1;letter-spacing:1.5px;margin-bottom:14px;}
+.mt-footer-links{list-style:none;}
+.mt-footer-links li{margin-bottom:9px;}
+.mt-footer-links a{font-size:11px;color:#888;text-decoration:none;}
+.mt-footer-links a:hover{color:#C9A227;}
+.mt-footer-bottom{border-top:0.5px solid #222;padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.mt-footer-copy{font-size:10px;color:#555;}
+.mt-footer-email a{font-size:10px;color:#888;text-decoration:none;}
+@media(max-width:768px){.mt-footer{padding:40px 20px 20px;}.mt-footer-top{grid-template-columns:1fr;gap:32px;}.mt-footer-bottom{flex-direction:column;align-items:flex-start;gap:8px;}}
+</style>
+</head>
+<body>
+
+<nav class="mt-nav">
+  <div class="mt-nav-logo">
+    <a href="/"><img src="/logo.png" alt="Monarch Technologies" /></a>
+  </div>
+  <div class="mt-nav-links">
+    <a href="/">Home</a>
+    <a href="/about">About Us</a>
+    <div class="mt-nav-dropdown" id="productsDropdown">
+      <a href="#" onclick="toggleDropdown(event)">Products</a>
+      <div class="mt-dropdown-menu" id="productsMenu">
+        <a href="/echo"><span class="mt-dropdown-badge echo">ECHO</span> Business Intelligence</a>
+        <a href="/grain"><span class="mt-dropdown-badge grain">GRAIN</span> Document Signing</a>
+        <a href="/arc"><span class="mt-dropdown-badge arc">ARC</span> Email Campaigns</a>
+        <a href="/cloise"><span class="mt-dropdown-badge" style="background:#E63946;color:#fff;">CLOISE</span> Cold Calling Cockpit</a>
+      </div>
+    </div>
+    <a href="/blog">Blog</a>
+    <a href="/contact">Contact Us</a>
+    <a href="https://echo.monarchaitech.com" class="mt-nav-cta">Try Echo Free</a>
+  </div>
+  <div class="mt-hamburger" id="mtHamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mt-mobile-menu" id="mtMobileMenu">
+  <a href="/">Home</a>
+  <a href="/about">About Us</a>
+  <span class="mt-mobile-submenu-label">PRODUCTS</span>
+  <a href="/echo" style="padding-left:12px;">&#8627; Echo — Business Intelligence</a>
+  <a href="/grain" style="padding-left:12px;">&#8627; GRAIN — Document Signing</a>
+  <a href="/arc" style="padding-left:12px;">&#8627; ARC — Email Campaigns</a>
+  <a href="/cloise" style="padding-left:12px;">&#8627; CLOISE — Cold Calling Cockpit</a>
+  <a href="/blog">Blog</a>
+  <a href="/contact">Contact Us</a>
+  <a href="https://echo.monarchaitech.com" class="mt-nav-cta">Try Echo Free</a>
+</div>
+
+<script>
+document.getElementById('mtHamburger').addEventListener('click', function() {
+  document.getElementById('mtMobileMenu').classList.toggle('open');
+});
+function toggleDropdown(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  document.getElementById('productsMenu').classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  var dropdown = document.getElementById('productsDropdown');
+  if (dropdown && !dropdown.contains(e.target)) {
+    document.getElementById('productsMenu').classList.remove('open');
+  }
+});
+</script>
+
+<!-- Article Hero -->
+<div class="mt-article-hero">
+  <a href="/blog" class="mt-article-back"><i class="ti ti-arrow-left"></i> Back to Blog</a>
+  <p class="mt-article-eyebrow">PROSPECTING &amp; BUSINESS INTELLIGENCE</p>
+  <h1 class="mt-article-title">Canadian B2B Prospecting: How to Find the Right Companies and Decision Makers</h1>
+  <div class="mt-article-meta">
+    <div class="mt-article-author">
+      <div class="mt-article-avatar">SB</div>
+      <span class="mt-article-author-name">Shah Babar</span>
+    </div>
+    <span class="mt-article-dot">&middot;</span>
+    <span class="mt-article-date">September 7, 2026</span>
+    <span class="mt-article-dot">&middot;</span>
+    <span class="mt-article-readtime">8 min read</span>
+  </div>
+</div>
+
+<!-- Article Body -->
+<div class="mt-article-body">
+
+  <p>Good prospecting is not about having the biggest list. It is about having the <strong>right list</strong>.</p>
+
+  <p>If you are selling to Canadian businesses, you already know how difficult it can be to build that list. Finding a company is usually not the hard part. The difficult part is finding the right person inside that company, getting the information you need to contact them, and doing it before you have spent half your day researching.</p>
+
+  <p>Whether you are selling commercial cleaning, security, landscaping, HVAC, construction, facility services, recruiting, consulting, or another B2B service, the quality of your prospecting directly affects the quality of your sales conversations. There is a significant difference between having 1,000 companies in a spreadsheet and having 100 companies where you know exactly who you want to speak with.</p>
+
+  <h2>What Is B2B Prospecting?</h2>
+
+  <p>B2B prospecting is the process of identifying businesses that could become customers and finding the specific people you need to reach within those businesses. It involves locating companies in a target industry, businesses within a particular province or market, owners and directors, decision makers, and contact information that is actually current.</p>
+
+  <p>The goal is not to collect information for the sake of collecting it. The goal is to turn information into conversations. A salesperson can have thousands of records and still have no idea who to call. Another salesperson with 100 highly relevant businesses, knowing who they need to reach, can have a far more productive day.</p>
+
+  <h2>The Problem With Buying Huge Lead Lists</h2>
+
+  <p>There was a time when buying a large lead list seemed like the obvious solution. You paid for a database, received a CSV, and suddenly had tens of thousands of companies. On paper, that sounds useful. In practice, the numbers become meaningless fast.</p>
+
+  <p>Consider this: if a salesperson could call 100 businesses every working day, a list of 85,000 companies would take more than three years just to make one pass through. Most individual salespeople do not need 85,000 prospects. They need the right 100.</p>
+
+  <p>There is another problem. Business information changes constantly. People leave companies. Companies close. Ownership changes. Phone numbers stop working. A person who was the right contact two years ago may no longer have anything to do with the business today. A huge list is not necessarily a useful list.</p>
+
+  <h2>The Decision Maker Is More Important Than the Company Name</h2>
+
+  <p>One of the biggest mistakes in B2B prospecting is confusing a company with a prospect. A company is an organization. A prospect is a person you need to reach within that organization. Those are not the same thing.</p>
+
+  <p>You may find the perfect property management company, construction firm, or commercial cleaning operation, but if you do not know who makes the relevant decisions, your research is incomplete. This becomes obvious the moment you call and reach a receptionist.</p>
+
+  <blockquote><p>"Can I speak with the owner?"</p></blockquote>
+
+  <blockquote><p>"What is this regarding?"</p></blockquote>
+
+  <p>Now you are explaining your reason for calling to someone who may not be the person responsible for making the decision. The gatekeeper is doing exactly what they were hired to do — protecting the decision maker's time. Knowing the name of the person you want to reach changes that conversation entirely.</p>
+
+  <h2>Good Prospecting Is Not About Volume</h2>
+
+  <p>One of the biggest misconceptions about sales is that more calls automatically produce more opportunities. They do not.</p>
+
+  <p>If you call 1,000 businesses without knowing which ones are relevant or who you need to speak with, you spend most of your day trying to get somewhere. Compare that with 100 highly relevant businesses where you know the company, understand why they fit your market, know the person you want to reach, and have the information you need to make the call. That is a completely different sales process. The objective is not to make the largest number of calls possible. The objective is to make <strong>better calls</strong>.</p>
+
+  <h2>Why Canadian B2B Prospecting Deserves Its Own Approach</h2>
+
+  <p>Canada has an enormous number of businesses across a wide range of industries, but the Canadian market is considerably smaller than the United States. Many global business intelligence platforms are designed to serve massive international markets, and Canada can become an afterthought — one geographic checkbox among dozens.</p>
+
+  <p>Canadian businesses have a specific need. They need to find Canadian companies, understand Canadian corporate structures, identify the people connected to those businesses, and build prospecting lists that make sense for the market they are actually selling into.</p>
+
+  <h2>Property Management: A Case Study in Strategic Prospecting</h2>
+
+  <p>Property management is one of the best examples of what deeper prospecting can mean in practice. Imagine a commercial cleaning company wants to win contracts for large buildings. Instead of searching broadly for any business that needs cleaning, the salesperson researches property management companies and the people responsible for those portfolios.</p>
+
+  <p>Now consider what happens when one property manager oversees multiple buildings. A single relationship could create opportunities across an entire portfolio. The salesperson is no longer thinking about winning one cleaning contract. They are thinking about building a relationship with someone who controls many of them. That changes the economics of every call made.</p>
+
+  <p>Knowing something about the buildings in a manager's portfolio before the call creates a completely different conversation than simply asking whether they need cleaning services. The information becomes part of the strategy.</p>
+
+  <h2>Who Benefits From Better Canadian Prospecting?</h2>
+
+  <p>Structured B2B prospecting is useful across almost every organization that sells to other businesses in Canada:</p>
+
+  <ul>
+    <li><strong>Sales teams</strong> building targeted lists of companies that match their ideal customer profile</li>
+    <li><strong>Recruiters</strong> identifying Canadian employers that may require their services</li>
+    <li><strong>Agencies</strong> finding businesses in their target market</li>
+    <li><strong>Consultants</strong> researching potential clients before making contact</li>
+    <li><strong>Commercial contractors</strong> — security, HVAC, cleaning, landscaping, and facility services companies identifying the right commercial targets</li>
+    <li><strong>Small business owners</strong> who are also the salesperson and need to make every hour count</li>
+  </ul>
+
+  <h2>Build Your Own List — You Will Use It Differently</h2>
+
+  <p>There is a practical advantage to building your own prospecting list rather than buying one. You know why every company is on it. You selected the market, the geography, and the type of customer. You can refine the list as you learn more. Instead of receiving a spreadsheet and trying to figure out what to do with it, you start with a question: <strong>Who do I actually want to sell to?</strong> Then you build everything around the answer.</p>
+
+  <h2>Data Should Lead to Action</h2>
+
+  <p>A company name in a spreadsheet does not create revenue. A phone number in a CSV does not create revenue. A director's name in a database does not create revenue. The value comes when that information helps a salesperson identify an opportunity, reach the right person, and start a real conversation.</p>
+
+  <p>The future of prospecting is not about having more leads. It is about having better intelligence before making contact. In competitive industries like commercial services, where everyone has access to a phone and a website, preparation is part of the competitive advantage. The salesperson who knows more before the conversation begins has a genuine edge.</p>
+
+  <!-- CTA -->
+  <div class="mt-article-cta">
+    <p class="mt-article-cta-eyebrow">CANADIAN BUSINESS INTELLIGENCE</p>
+    <h3>Start Building Better Prospect Lists</h3>
+    <p>Search 642,000+ active Canadian corporations, identify directors, enrich company records, and build targeted prospecting lists — all in one place.</p>
+    <a href="https://echo.monarchaitech.com" class="mt-btn-primary">Try Echo Free</a>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="mt-footer">
+  <div class="mt-footer-top">
+    <div>
+      <div class="mt-footer-logo">
+        <a href="/"><img src="/logo.png" alt="Monarch Technologies" /></a>
+      </div>
+      <p class="mt-footer-desc">Monarch Technologies builds Canadian business intelligence and productivity tools for professionals who need faster data, smarter workflows, and better prospecting.</p>
+    </div>
+    <div>
+      <div class="mt-footer-col-head">COMPANY</div>
+      <ul class="mt-footer-links">
+        <li><a href="/about">About Monarch</a></li>
+        <li><a href="/echo">Echo</a></li>
+        <li><a href="/grain">GRAIN</a></li>
+        <li><a href="/arc">ARC</a></li>
+        <li><a href="/cloise">CLOISE</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="mt-footer-col-head">RESOURCES</div>
+      <ul class="mt-footer-links">
+        <li><a href="/comparison">Comparison</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms-of-use">Terms of Use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mt-footer-bottom">
+    <span class="mt-footer-copy">&copy; 2026 Monarch Technologies. A division of 2468123 Ontario Corp. All rights reserved.</span>
+    <span class="mt-footer-email"><a href="mailto:support@monarchaitech.com">support@monarchaitech.com</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
