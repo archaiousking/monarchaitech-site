@@ -130,12 +130,33 @@ document.addEventListener('click', function(e) {
 </div>
 <div class="mt-blog-body">
   <div class="mt-gold-line"></div>
-  <div class="mt-blog-coming-soon">
-    <div class="mt-blog-coming-soon-icon"><i class="ti ti-writing"></i></div>
-    <h2>Articles Coming Soon</h2>
-    <p>We're building out the Monarch blog with practical guides on Canadian B2B prospecting, business intelligence strategies, and product deep-dives. Check back soon.</p>
-    <a href="/contact" class="mt-btn-primary">Contact Us</a>
-  </div>
+<style>
+.mt-blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px;}
+.mt-blog-card{background:white;border-radius:8px;border:0.5px solid #D8D2C8;overflow:hidden;transition:box-shadow 0.2s,transform 0.2s;text-decoration:none;display:block;}
+.mt-blog-card:hover{box-shadow:0 8px 32px rgba(0,0,0,0.10);transform:translateY(-2px);}
+.mt-blog-card-body{padding:28px 28px 24px;}
+.mt-blog-card-tag{font-size:9px;font-weight:700;letter-spacing:2px;color:#C9A227;margin-bottom:10px;}
+.mt-blog-card-title{font-size:17px;font-weight:700;color:#111111;line-height:1.4;margin-bottom:12px;}
+.mt-blog-card-excerpt{font-size:13px;color:#555;line-height:1.75;margin-bottom:20px;}
+.mt-blog-card-meta{display:flex;align-items:center;gap:10px;border-top:0.5px solid #eee;padding-top:16px;}
+.mt-blog-card-avatar{width:26px;height:26px;border-radius:50%;background:#C9A227;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#111111;flex-shrink:0;}
+.mt-blog-card-author{font-size:11px;color:#333;font-weight:600;}
+.mt-blog-card-date{font-size:11px;color:#999;margin-left:auto;}
+</style>
+<div class="mt-blog-grid">
+  <a href="/blog/canadian-b2b-prospecting" class="mt-blog-card">
+    <div class="mt-blog-card-body">
+      <p class="mt-blog-card-tag">PROSPECTING &amp; BUSINESS INTELLIGENCE</p>
+      <h2 class="mt-blog-card-title">Canadian B2B Prospecting: How to Find the Right Companies and Decision Makers</h2>
+      <p class="mt-blog-card-excerpt">Good prospecting is not about having the biggest list. It is about having the right one. A practical guide for Canadian service businesses.</p>
+      <div class="mt-blog-card-meta">
+        <div class="mt-blog-card-avatar">SB</div>
+        <span class="mt-blog-card-author">Shah Babar</span>
+        <span class="mt-blog-card-date">Sep 7, 2026</span>
+      </div>
+    </div>
+  </a>
+</div>
 </div>
 <section class="mt-newsletter">
   <h2>Stay in the Loop</h2>
