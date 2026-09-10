@@ -468,7 +468,7 @@ document.addEventListener('click', function(e) {
   <p class="cl-section-eyebrow" style="color:#E63946;text-align:center;font-size:10px;font-weight:700;letter-spacing:3px;margin-bottom:12px;">PRICING</p>
   <h2 class="cl-pricing-heading">Simple Pricing. No Per-Minute Charges.</h2>
   <p class="cl-pricing-sub">Pay for the cockpit, not the calls. Use your own phone, your own leads, your own dialer.</p>
-  <div class="cl-pricing-grid">
+  <div class="cl-pricing-grid" style="grid-template-columns:repeat(4,1fr);">
     <div class="cl-price-card">
       <div class="cl-price-plan">ESSENTIAL</div>
       <div class="cl-price-amount">$49.99<span>/mo</span></div>
@@ -480,11 +480,13 @@ document.addEventListener('click', function(e) {
         <li>AI script generation (EN, FR, ES, PT)</li>
         <li>10 rebuttals with 3 loops each per script</li>
         <li>Lead list upload via CSV</li>
+        <li>Market segmentation by city</li>
         <li>Session management — resume any time</li>
         <li>Callback scheduling with alerts</li>
-        <li>CSV export</li>
+        <li>Export by disposition</li>
         <li>Script Vault — up to 10 scripts</li>
         <li>Manual scripts — never counted against AI limit</li>
+        <li>Performance growth matrix</li>
       </ul>
       <a href="https://cloise.monarchaitech.com" class="cl-price-btn outline">Sign In to CLOISE</a>
     </div>
@@ -492,12 +494,12 @@ document.addEventListener('click', function(e) {
       <div class="cl-price-featured-badge">MOST POPULAR</div>
       <div class="cl-price-plan">PRO</div>
       <div class="cl-price-amount">$99<span>/mo</span></div>
-      <div class="cl-price-seats">3 seats</div>
-      <div class="cl-price-gen">20 AI script generations per user per month</div>
+      <div class="cl-price-seats">2 seats</div>
+      <div class="cl-price-gen">10 AI script generations per user per month</div>
       <hr class="cl-price-divider">
       <ul class="cl-price-features">
         <li>Everything in Essential</li>
-        <li>3 team seats</li>
+        <li>2 team seats</li>
         <li>Objection Library — save and search winning responses</li>
         <li>Script PDF export</li>
         <li>Multi-language script generation</li>
@@ -509,21 +511,45 @@ document.addEventListener('click', function(e) {
     <div class="cl-price-card">
       <div class="cl-price-plan">BUSINESS</div>
       <div class="cl-price-amount">$199<span>/mo</span></div>
-      <div class="cl-price-seats">10 seats</div>
-      <div class="cl-price-gen">50 AI script generations per user per month</div>
+      <div class="cl-price-seats">5 seats</div>
+      <div class="cl-price-gen">20 AI script generations per user per month</div>
       <hr class="cl-price-divider">
       <ul class="cl-price-features">
         <li>Everything in Pro</li>
-        <li>10 team seats</li>
+        <li>5 team seats</li>
         <li>Advanced analytics</li>
         <li>Dedicated support</li>
       </ul>
       <a href="https://cloise.monarchaitech.com" class="cl-price-btn outline">Sign In to CLOISE</a>
     </div>
+    <div class="cl-price-card" style="border-color:#C9A227;position:relative;">
+      <div class="cl-price-featured-badge" style="background:#C9A227;color:#111;">ELITE</div>
+      <div class="cl-price-plan" style="color:#C9A227;">ELITE</div>
+      <div class="cl-price-amount">$299<span>/mo</span></div>
+      <div class="cl-price-seats" style="color:#C9A227;">7 seats</div>
+      <div class="cl-price-gen">30 AI script generations per user per month</div>
+      <hr class="cl-price-divider">
+      <ul class="cl-price-features">
+        <li>Everything in Business</li>
+        <li>7 team seats</li>
+        <li>Team lead dashboards included</li>
+        <li>Per-rep performance matrix</li>
+        <li>Team KPI tracking</li>
+        <li>Priority dedicated support</li>
+      </ul>
+      <a href="mailto:support@monarchaitech.com?subject=CLOISE Elite Inquiry" class="cl-price-btn" style="background:#C9A227;color:#111;">Contact Us for Elite</a>
+    </div>
   </div>
   <div class="cl-addon-bar">
-    <div><div style="font-size:9px;font-weight:700;color:#7a9bb5;letter-spacing:2px;margin-bottom:6px;">TOKEN ADD-ON PACK</div><div style="font-size:15px;font-weight:700;color:#F8F6F1;margin-bottom:4px;">Need more AI generations?</div><div style="font-size:12px;color:#D8D2C8;">Buy additional generation packs any time — no plan upgrade required. Manual scripts never count against your limit.</div></div>
-    <div style="text-align:right;flex-shrink:0;"><div style="font-size:22px;font-weight:800;color:#E63946;">$15</div><div style="font-size:11px;color:#7a9bb5;">50 additional AI generations</div></div>
+    <div>
+      <div style="font-size:9px;font-weight:700;color:#7a9bb5;letter-spacing:2px;margin-bottom:6px;">ADD-ONS</div>
+      <div style="font-size:15px;font-weight:700;color:#F8F6F1;margin-bottom:4px;">Extend your plan</div>
+      <div style="font-size:12px;color:#D8D2C8;">Additional seats $19.99/mo per seat on any plan. AI generation packs available any time — manual scripts never count against your limit.</div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;display:flex;flex-direction:column;gap:6px;">
+      <div><div style="font-size:18px;font-weight:800;color:#E63946;">$19.99</div><div style="font-size:11px;color:#7a9bb5;">per additional seat / mo</div></div>
+      <div><div style="font-size:18px;font-weight:800;color:#E63946;">$15</div><div style="font-size:11px;color:#7a9bb5;">50 additional AI generations</div></div>
+    </div>
   </div>
 </section>
 
