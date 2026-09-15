@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="SIGNAL — Secure team messaging for service businesses. Channels, client rooms, AI recaps, and Monarch integrations. Free for 6 months." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" />
+<title>SIGNAL — Secure Team Messaging | Monarch Technologies</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:#F8F6F1;color:#111111;}
+.mt-nav{background:#0d1117;padding:0 48px;height:90px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1000;}
+.mt-nav-logo img{height:76px;width:auto;display:block;background:#0d1117;padding:4px;}
+.mt-nav-links{display:flex;gap:32px;align-items:center;}
+.mt-nav-links a{color:#D8D2C8;font-size:13px;text-decoration:none;letter-spacing:0.3px;transition:color 0.2s;}
+.mt-nav-links a:hover{color:#C9A227;}
+.mt-nav-cta{background:#C9A227;color:#111111 !important;font-size:12px;font-weight:700;padding:10px 20px;border-radius:3px;letter-spacing:0.5px;white-space:nowrap;}
+.mt-nav-cta:hover{background:#b8911f !important;}
+.mt-nav-dropdown{position:relative;}
+.mt-nav-dropdown > a{display:flex;align-items:center;gap:5px;cursor:pointer;}
+.mt-nav-dropdown > a::after{content:'▾';font-size:10px;color:#D8D2C8;}
+.mt-dropdown-menu{display:none;position:absolute;top:calc(100% + 12px);left:0;background:#0d1117;border:1px solid #1e2a3a;border-radius:6px;min-width:220px;overflow:hidden;z-index:2000;}
+.mt-dropdown-menu.open{display:block;}
+.mt-dropdown-menu a{display:flex;align-items:center;gap:10px;color:#D8D2C8;font-size:13px;padding:12px 16px;text-decoration:none;border-bottom:1px solid #1e2a3a;transition:background 0.2s,color 0.2s;}
+.mt-dropdown-menu a:last-child{border-bottom:none;}
+.mt-dropdown-menu a:hover{background:#1e2a3a;color:#C9A227;}
+.mt-dropdown-badge{font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:0.5px;}
+.mt-dropdown-badge.echo{background:#00b4d8;color:#0d1117;}
+.mt-dropdown-badge.grain{background:#C9A227;color:#111111;}
+.mt-dropdown-badge.arc{background:#FF2D78;color:#ffffff;}
+.mt-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+.mt-hamburger span{display:block;width:24px;height:2px;background:#D8D2C8;border-radius:2px;transition:all 0.3s;}
+.mt-mobile-menu{display:none;flex-direction:column;background:#0d1117;padding:20px 24px;border-top:1px solid #1e2a3a;}
+.mt-mobile-menu a{color:#D8D2C8;text-decoration:none;font-size:15px;padding:12px 0;border-bottom:1px solid #1e2a3a;display:block;}
+.mt-mobile-menu a:hover{color:#C9A227;}
+.mt-mobile-menu .mt-nav-cta{background:#C9A227;color:#111111 !important;font-weight:700;padding:12px 20px;border-radius:3px;text-align:center;margin-top:12px;border-bottom:none;}
+.mt-mobile-menu.open{display:flex;}
+.mt-mobile-submenu-label{color:#C9A227;font-size:10px;font-weight:700;letter-spacing:2px;padding:12px 0 4px;border-bottom:none !important;cursor:default;}
+@media(max-width:768px){
+.mt-nav{padding:0 20px;}
+.mt-nav-links{display:none;}
+.mt-hamburger{display:flex;}
+}
+</style>
+<style>
+.signal-hero{background:#0D1117;padding:96px 48px 72px;text-align:center;}
+.signal-eyebrow{color:#3B82F6;font-size:10px;font-weight:700;letter-spacing:3px;margin-bottom:16px;}
+.signal-title{font-size:44px;font-weight:800;color:#F8F6F1;line-height:1.15;margin-bottom:20px;max-width:700px;margin-left:auto;margin-right:auto;}
+.signal-sub{font-size:16px;color:#8B9CB6;max-width:520px;margin:0 auto 36px;line-height:1.75;}
+.signal-btn{display:inline-block;background:#3B82F6;color:#fff;font-weight:700;font-size:14px;padding:14px 32px;border-radius:6px;text-decoration:none;letter-spacing:0.3px;}
+.signal-btn:hover{background:#2563EB;}
+.signal-btn-outline{display:inline-block;background:none;color:#3B82F6;font-weight:700;font-size:14px;padding:14px 32px;border-radius:6px;text-decoration:none;border:1px solid #3B82F6;margin-left:12px;}
+.signal-features{background:#F8F6F1;padding:80px 48px;}
+.signal-features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1000px;margin:0 auto;}
+.signal-feature-card{background:#fff;border-radius:10px;padding:28px;border:0.5px solid #D8D2C8;}
+.signal-feature-icon{font-size:28px;margin-bottom:14px;}
+.signal-feature-title{font-size:16px;font-weight:700;color:#111;margin-bottom:8px;}
+.signal-feature-desc{font-size:13px;color:#555;line-height:1.75;}
+.signal-pricing{background:#0D1117;padding:80px 48px;}
+.signal-pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1000px;margin:0 auto;}
+.signal-plan{background:#131920;border-radius:10px;padding:28px;border:1px solid #1E2A3A;}
+.signal-plan.featured{border-color:#3B82F633;background:#1A2232;}
+.signal-plan-name{font-size:11px;font-weight:700;letter-spacing:2px;color:#8B9CB6;margin-bottom:8px;}
+.signal-plan-price{font-size:32px;font-weight:800;color:#F8F6F1;margin-bottom:4px;}
+.signal-plan-price span{font-size:14px;font-weight:400;color:#8B9CB6;}
+.signal-plan-users{font-size:12px;color:#8B9CB6;margin-bottom:20px;}
+.signal-plan-features{list-style:none;padding:0;margin:0 0 24px;}
+.signal-plan-features li{font-size:12px;color:#D8D2C8;padding:5px 0;border-bottom:1px solid #1E2A3A;display:flex;align-items:center;gap:8px;}
+.signal-plan-features li::before{content:'✓';color:#3B82F6;font-weight:700;flex-shrink:0;}
+.signal-plan-btn{display:block;text-align:center;padding:10px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;background:#3B82F633;color:#3B82F6;border:1px solid #3B82F655;}
+.signal-plan-btn:hover{background:#3B82F655;}
+.signal-free-banner{background:#3B82F610;border:1px solid #3B82F633;border-radius:10px;padding:24px 32px;max-width:700px;margin:0 auto 48px;text-align:center;}
+.signal-section-label{font-size:10px;font-weight:700;letter-spacing:3px;color:#3B82F6;text-align:center;margin-bottom:16px;}
+.signal-section-title{font-size:30px;font-weight:700;color:#F8F6F1;text-align:center;margin-bottom:12px;}
+.signal-section-sub{font-size:14px;color:#8B9CB6;text-align:center;margin-bottom:48px;max-width:540px;margin-left:auto;margin-right:auto;}
+.signal-locked-label{font-size:10px;color:#556677;background:#1E2A3A;border-radius:3px;padding:1px 5px;margin-left:4px;}
+@media(max-width:768px){
+.signal-hero{padding:56px 20px 48px;}
+.signal-title{font-size:28px;}
+.signal-features{padding:48px 20px;}
+.signal-features-grid{grid-template-columns:1fr;}
+.signal-pricing{padding:48px 20px;}
+.signal-pricing-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav class="mt-nav">
+  <div class="mt-nav-logo">
+    <a href="/"><img src="/logo.png" alt="Monarch Technologies" /></a>
+  </div>
+  <div class="mt-nav-links">
+    <a href="/">Home</a>
+    <a href="/about">About Us</a>
+    <div class="mt-nav-dropdown" id="productsDropdown">
+      <a href="#" onclick="toggleDropdown(event)">Products</a>
+      <div class="mt-dropdown-menu" id="productsMenu">
+        <a href="/echo"><span class="mt-dropdown-badge echo">ECHO</span> Business Intelligence</a>
+        <a href="/grain"><span class="mt-dropdown-badge grain">GRAIN</span> Document Signing</a>
+        <a href="/arc"><span class="mt-dropdown-badge arc">ARC</span> Email Campaigns</a>
+        <a href="/cloise"><span class="mt-dropdown-badge" style="background:#E63946;color:#fff;">CLOISE</span> Cold Calling Cockpit</a>
+      </div>
+    </div>
+    <a href="/blog">Blog</a>
+    <a href="/contact">Contact Us</a>
+    <a href="https://echo.monarchaitech.com" class="mt-nav-cta">Try Echo Free</a>
+  </div>
+  <div class="mt-hamburger" id="mtHamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mt-mobile-menu" id="mtMobileMenu">
+  <a href="/">Home</a>
+  <a href="/about">About Us</a>
+  <span style="color:#C9A227;font-size:10px;font-weight:700;letter-spacing:2px;padding:12px 0 4px;display:block;">PRODUCTS</span>
+  <a href="/echo" style="padding-left:12px;">&#8627; Echo — Business Intelligence</a>
+  <a href="/grain" style="padding-left:12px;">&#8627; GRAIN — Document Signing</a>
+  <a href="/arc" style="padding-left:12px;">&#8627; ARC — Email Campaigns</a>
+  <a href="/cloise" style="padding-left:12px;">&#8627; CLOISE — Cold Calling Cockpit</a>
+  <a href="/signal" style="padding-left:12px;">&#8627; SIGNAL — Team Messaging</a>
+  <a href="/blog">Blog</a>
+  <a href="/contact">Contact Us</a>
+  <a href="https://signal.monarchaitech.com" class="mt-nav-cta">Try SIGNAL Free</a>
+</div>
+
+<!-- Hero -->
+<div class="signal-hero">
+  <p class="signal-eyebrow">SIGNAL — SECURE TEAM MESSAGING</p>
+  <h1 class="signal-title">Your team deserves better than a group chat</h1>
+  <p class="signal-sub">Channels, client rooms, AI-powered recaps, and native Monarch integrations — built for service businesses that move fast.</p>
+  <a href="https://signal.monarchaitech.com" class="signal-btn">Try SIGNAL Free</a>
+  <a href="#pricing" class="signal-btn-outline">See Pricing</a>
+</div>
+
+<!-- Features -->
+<div class="signal-features">
+  <p class="signal-section-label">WHAT YOU GET</p>
+  <h2 class="signal-section-title" style="color:#111;">Everything your team needs in one place</h2>
+  <p class="signal-section-sub" style="color:#555;">No per-seat pricing games. No bloat. Just clean, fast team communication built for the way service businesses actually work.</p>
+
+  <div class="signal-features-grid">
+    <div class="signal-feature-card">
+      <div class="signal-feature-icon">💬</div>
+      <h3 class="signal-feature-title">Channels & Direct Messages</h3>
+      <p class="signal-feature-desc">Organize conversations by team, project, or client. Keep the work talk off personal phones.</p>
+    </div>
+    <div class="signal-feature-card">
+      <div class="signal-feature-icon">👥</div>
+      <h3 class="signal-feature-title">Client Rooms</h3>
+      <p class="signal-feature-desc">Invite property managers, condo boards, or clients into a shared channel. They post requests, your team responds — in real time.</p>
+    </div>
+    <div class="signal-feature-card">
+      <div class="signal-feature-icon">✨</div>
+      <h3 class="signal-feature-title">AI Daily Recaps</h3>
+      <p class="signal-feature-desc">Every morning, AI summarizes what happened yesterday — key discussions, decisions, and action items — so nothing falls through the cracks.</p>
+    </div>
+    <div class="signal-feature-card">
+      <div class="signal-feature-icon">⚡</div>
+      <h3 class="signal-feature-title">Monarch Integrations</h3>
+      <p class="signal-feature-desc">Closed a deal in CLOISE? Signed a contract in GRAIN? SIGNAL posts it automatically to your team channel. No manual updates.</p>
+    </div>
+    <div class="signal-feature-card">
+      <div class="signal-feature-icon">🎤</div>
+      <h3 class="signal-feature-title">Voice Notes</h3>
+      <p class="signal-feature-desc">Sometimes typing isn't enough. Send voice messages when you're on the move — field teams love it.</p>
+    </div>
+    <div class="signal-feature-card">
+      <div class="signal-feature-icon">🔍</div>
+      <h3 class="signal-feature-title">AI Search</h3>
+      <p class="signal-feature-desc">Ask a question and AI finds the answer from your message history across all channels. No more scrolling.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Pricing -->
+<div class="signal-pricing" id="pricing">
+  <p class="signal-section-label">PRICING</p>
+  <h2 class="signal-section-title">Flat pricing. No per-seat games.</h2>
+  <p class="signal-section-sub">One price for your whole team — unlimited users on every plan. AI features are a separate add-on so you only pay for what you use.</p>
+
+  <div class="signal-free-banner">
+    <div style="font-size:14px;font-weight:700;color:#3B82F6;margin-bottom:6px;">🎉 Free for 6 months</div>
+    <div style="font-size:13px;color:#8B9CB6;line-height:1.7;">Start for free — no credit card required. After 6 months, keep SIGNAL free when you hold any active Monarch subscription (Echo, CLOISE, ARC, or GRAIN).</div>
+  </div>
+
+  <div class="signal-pricing-grid">
+    <div class="signal-plan">
+      <div class="signal-plan-name">STARTER</div>
+      <div class="signal-plan-price">$49.99<span>/mo</span></div>
+      <div class="signal-plan-users">Up to 12 users</div>
+      <ul class="signal-plan-features">
+        <li>Unlimited channels</li>
+        <li>Client rooms</li>
+        <li>Voice notes</li>
+        <li>Full message history</li>
+        <li>Monarch integrations</li>
+        <li>File sharing up to 25MB</li>
+      </ul>
+      <a href="https://signal.monarchaitech.com" class="signal-plan-btn">Get Started</a>
+    </div>
+    <div class="signal-plan featured">
+      <div style="font-size:9px;font-weight:700;color:#3B82F6;letter-spacing:1px;margin-bottom:6px;">MOST POPULAR</div>
+      <div class="signal-plan-name">GROWTH</div>
+      <div class="signal-plan-price">$99<span>/mo</span></div>
+      <div class="signal-plan-users">Up to 30 users</div>
+      <ul class="signal-plan-features">
+        <li>Everything in Starter</li>
+        <li>Up to 30 users</li>
+        <li>Priority support</li>
+        <li>Advanced channel permissions</li>
+        <li>Usage analytics</li>
+      </ul>
+      <a href="https://signal.monarchaitech.com" class="signal-plan-btn">Get Started</a>
+    </div>
+    <div class="signal-plan">
+      <div class="signal-plan-name">UNLIMITED</div>
+      <div class="signal-plan-price">$199<span>/mo</span></div>
+      <div class="signal-plan-users">Unlimited users</div>
+      <ul class="signal-plan-features">
+        <li>Everything in Growth</li>
+        <li>Unlimited users</li>
+        <li>Dedicated support</li>
+        <li>Custom integrations</li>
+      </ul>
+      <a href="https://signal.monarchaitech.com" class="signal-plan-btn">Get Started</a>
+    </div>
+    <div class="signal-plan">
+      <div class="signal-plan-name">AI ADD-ONS</div>
+      <div class="signal-plan-price" style="font-size:20px;padding-top:4px;">From $9.99<span>/mo</span></div>
+      <div class="signal-plan-users">Add to any plan</div>
+      <ul class="signal-plan-features">
+        <li>Basic — 500 AI actions/mo</li>
+        <li>Standard — 1,500 AI actions/mo</li>
+        <li>Pro — 5,000 AI actions/mo</li>
+        <li>Summaries, recaps, search</li>
+        <li>Action item extraction</li>
+        <li>Workflow generation</li>
+      </ul>
+      <a href="https://signal.monarchaitech.com" class="signal-plan-btn">Learn More</a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div style="background:#F8F6F1;padding:80px 48px;text-align:center;">
+  <h2 style="font-size:28px;font-weight:700;color:#111;margin-bottom:12px;">Start for free. Keep it forever.</h2>
+  <p style="font-size:14px;color:#555;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">6 months free, no credit card. Your team will thank you for getting off the group chat.</p>
+  <a href="https://signal.monarchaitech.com" class="signal-btn" style="background:#3B82F6;">Create Your Workspace</a>
+</div>
+
+<footer class="mt-footer">
+  <div class="mt-footer-top">
+    <div>
+      <div class="mt-footer-logo">
+        <a href="/"><img src="/logo.png" alt="Monarch Technologies" /></a>
+      </div>
+      <p class="mt-footer-desc">Monarch Technologies builds Canadian business intelligence and productivity tools for professionals who need faster data, smarter workflows, and better prospecting.</p>
+    </div>
+    <div>
+      <div class="mt-footer-col-head">COMPANY</div>
+      <ul class="mt-footer-links">
+        <li><a href="/about">About Monarch</a></li>
+        <li><a href="/echo">Echo</a></li>
+        <li><a href="/grain">GRAIN</a></li>
+        <li><a href="/arc">ARC</a></li>
+        <li><a href="/cloise">CLOISE</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="mt-footer-col-head">RESOURCES</div>
+      <ul class="mt-footer-links">
+        <li><a href="/comparison">Comparison</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms-of-use">Terms of Use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mt-footer-bottom">
+    <span class="mt-footer-copy">© 2026 Monarch Technologies. A division of 2468123 Ontario Corp. All rights reserved.</span>
+    <span class="mt-footer-email"><a href="mailto:support@monarchaitech.com">support@monarchaitech.com</a></span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('mtHamburger')?.addEventListener('click', function() {
+  document.getElementById('mtMobileMenu').classList.toggle('open');
+});
+function toggleDropdown(e) {
+  e.preventDefault(); e.stopPropagation();
+  document.getElementById('productsMenu').classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  var dropdown = document.getElementById('productsDropdown');
+  if (dropdown && !dropdown.contains(e.target)) {
+    document.getElementById('productsMenu')?.classList.remove('open');
+  }
+});
+</script>
+</body>
+</html>
